@@ -1,27 +1,24 @@
 ﻿using System;
 
-using Algorithms;
-
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
+using Xunit.Extensions;
 
 namespace Algorithms.Tests
 {
-	[TestClass]
 	public class ReverseStringTest : ReverseString
 	{
-		[TestMethod]
-		public void TestReverseString()
+		[Theory]
+		[InlineData("abcdef", "fedcba")]
+		public void TestReverseString(string input, string expected)
 		{
-			string str = "abcdef";
-
 			foreach (var test in new Func<string, string>[]
 				{
 					Do1, Do2, Do3, Do4
 				})
 			{
-				string r = test(str);
-				Assert.AreEqual(r, "fedcba");
+				string actual = test(input);
+				Assert.Equal(actual, expected);
 			}
-		} 
+		}
 	}
 }
