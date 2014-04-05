@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Algorithms.Tests
 {
 	[TestClass]
-	public class FindDuplicateInArrayTest
+	public class FindDuplicateInArrayTest : FindDuplicateInArray
 	{
 		[TestMethod]
 		public void TestFindDuplicateInArray()
@@ -14,13 +14,7 @@ namespace Algorithms.Tests
 
 			foreach (var test in new Func<int[], int>[]
 				{
-					FindDuplicateInArray.Do1,
-					FindDuplicateInArray.Do2,
-					FindDuplicateInArray.Do3,
-					FindDuplicateInArray.Do4,
-					FindDuplicateInArray.Do5,
-					FindDuplicateInArray.Do6,
-					//FindDuplicateInArray.Do7
+					Do1, Do2, Do3, Do4,Do5, Do6, //Do7
 				})
 			{
 				int r = test(arr);
