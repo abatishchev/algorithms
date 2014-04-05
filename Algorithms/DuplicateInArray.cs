@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Algorithms
 {
-	public class FindDuplicateInArray
+	public class DuplicateInArray
 	{
 		public static int Do1(int[] arr)
 		{

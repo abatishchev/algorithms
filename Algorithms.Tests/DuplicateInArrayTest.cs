@@ -6,11 +6,10 @@ using Xunit.Extensions;
 
 namespace Algorithms.Tests
 {
-	public class FindDuplicateInArrayTest : FindDuplicateInArray
+	public class DuplicateInArrayTest : DuplicateInArray
 	{
-		[Theory]
-		[PropertyData("GetData")]
-		public void TestFindDuplicateInArray(int[] input, int missing)
+		[Theory, PropertyData("GetData")]
+		public void DuplicateInArray(int[] input, int missing)
 		{
 			foreach (var test in new Func<int[], int>[]
 				{

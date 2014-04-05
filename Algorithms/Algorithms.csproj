@@ -34,7 +34,8 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FindDuplicateInArray.cs" />
+    <Compile Include="DuplicateInArray.cs" />
+    <Compile Include="LoopInLinkedList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReverseString.cs" />
   </ItemGroup>
