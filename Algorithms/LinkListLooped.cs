@@ -25,13 +25,10 @@ namespace Algorithms
 		{
 			Node slow = root, fast = root.Next;
 
-			while (slow.Next != null && fast.Next != null)
+			while (fast != null)
 			{
 				if (slow == fast)
 					return true;
-
-				if (fast == null)
-					return false;
 
 				fast = fast.Next.Next;
 				slow = slow.Next;

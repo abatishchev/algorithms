@@ -22,13 +22,17 @@ namespace Algorithms
 
 		public override string ToString()
 		{
-			if (LinkListLooped.Do1(this))
-				return Value.ToString();
-
-			return String.Join("->", ToString(this));
+			return ToString(true);
 		}
 
-		private static IEnumerable<object> ToString(Node node)
+		public string ToString(bool safe)
+		{
+			return safe ?
+				(Value ?? new object()).ToString() :
+				String.Join("->", GetValues(this));
+		}
+
+		private static IEnumerable<object> GetValues(Node node)
 		{
 			while (node != null)
 			{
