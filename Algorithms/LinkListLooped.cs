@@ -1,41 +1,8 @@
 ﻿using System.Collections.Generic;
-using System.Diagnostics;
 
 namespace Algorithms
 {
-	[DebuggerDisplay("{Value}")]
-	public class Node
-	{
-		private static int Total;
-
-		public Node()
-		{
-			Value = ++Total;
-		}
-
-		public Node Next;
-
-		public int Value;
-
-		public static Node New(bool isLooped)
-		{
-			Total = 0;
-
-			Node root = new Node
-			{
-				Next = new Node
-				{
-					Next = new Node()
-				}
-			};
-
-			root.Next.Next.Next = isLooped ? root : null;
-
-			return root;
-		}
-	}
-
-	public class LoopInLinkedList
+	public class LinkListLooped
 	{
 		public static bool Do1(Node root)
 		{

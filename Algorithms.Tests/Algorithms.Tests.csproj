@@ -53,7 +53,9 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="LoopInLinkedListTest.cs" />
+    <Compile Include="CreateLinkedListTest.cs" />
+    <Compile Include="LinkListPalindromeTest.cs" />
+    <Compile Include="LinkListLoopedTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DuplicateInArrayTest.cs" />
     <Compile Include="ReverseStringTest.cs" />

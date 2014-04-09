@@ -6,14 +6,14 @@ using Xunit.Extensions;
 
 namespace Algorithms.Tests
 {
-	public class LoopInLinkedListTest : LoopInLinkedList
+	public class LinkListLoopedTest : LinkListLooped
 	{
 		[Theory, PropertyData("GetData")]
-		public void LoopInLinkedList(Node root, bool expected)
+		public void LinkListLooped(Node root, bool expected)
 		{
 			foreach (var test in new Func<Node, bool>[]
 				{
-					Do1, Do2, // Do3, Do4,Do5, Do6, //Do7
+					Do1, Do2
 				})
 			{
 				bool actual = test(root);
