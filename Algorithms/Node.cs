@@ -6,23 +6,22 @@ namespace Algorithms
 	[DebuggerDisplay("{Value}")]
 	public class Node
 	{
-		public Node(string value = null)
-		{
-			Value = value;
-		}
-
-		public Node(int value)
-			: this(value.ToString())
+		public Node()
 		{
 		}
 
-		public string Value;
+		public Node(object value)
+		{
+			Value = value.ToString();
+		}
+
+		public object Value;
 
 		public Node Next;
 
-		private static Node New(Func<Tuple<bool, string>> func)
+		private static Node New(Func<Tuple<bool, object>> func)
 		{
-			Tuple<bool, string> t;
+			Tuple<bool, object> t;
 
 			Node root = null;
 			while ((t = func()).Item1)
@@ -40,25 +39,11 @@ namespace Algorithms
 		{
 			int i = 0;
 
-			Node root = New(() => new Tuple<bool, string>(i++ <= 5, i.ToString()));
+			Node root = New(() => Tuple.Create(i++ <= 5, (object)i));
 
 			root.Next.Next.Next = isLooped ? root : null;
 
 			return root;
-		}
-
-		public static Node New(string str)
-		{
-			str = ReverseString.Do1(str);
-
-			using (var e = str.GetEnumerator())
-			{
-				return New(() =>
-					{
-						bool moveNext = e.MoveNext();
-						return new Tuple<bool, string>(moveNext, moveNext ? e.Current.ToString() : "");
-					});
-			}
 		}
 	}
 }

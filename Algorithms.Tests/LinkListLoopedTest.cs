@@ -25,8 +25,12 @@ namespace Algorithms.Tests
 		{
 			get
 			{
-				yield return new object[] { Node.New(false), false };
-				yield return new object[] { Node.New(true), true };
+				yield return new object[] { CreateLinkedList.Do(), false };
+
+				Node looped = CreateLinkedList.Do();
+				looped.Next.Next = looped;
+
+				yield return new object[] { looped, true };
 			}
 		}
 	}

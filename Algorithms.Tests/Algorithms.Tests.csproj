@@ -54,6 +54,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="CreateLinkedListTest.cs" />
+    <Compile Include="LinkedListMeanTest.cs" />
     <Compile Include="LinkListPalindromeTest.cs" />
     <Compile Include="LinkListLoopedTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

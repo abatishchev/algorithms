@@ -36,6 +36,7 @@
   <ItemGroup>
     <Compile Include="CreateLinkedList.cs" />
     <Compile Include="DuplicateInArray.cs" />
+    <Compile Include="LinkedListMean.cs" />
     <Compile Include="LinkListPalindrome.cs" />
     <Compile Include="LinkListLooped.cs" />
     <Compile Include="Node.cs" />

@@ -1,21 +1,29 @@
-﻿namespace Algorithms
+﻿using System.Collections.Generic;
+using System.Linq;
+
+namespace Algorithms
 {
 	public class CreateLinkedList
 	{
-		public Node Create(int depth)
+		public static Node Do(int depth = 5)
 		{
-			return Create(depth, new Node());
+			return Create(Enumerable.Range(0, depth), new Node());
 		}
 
-		private static Node Create(int depth, Node node)
+		public static Node Do(string data)
 		{
-			if (depth == 0)
+			return Create(data.Reverse(), new Node());
+		}
+
+		private static Node Create<T>(IEnumerable<T> data, Node node)
+		{
+			if (!data.Any())
 				return node;
 
-			var temp = new Node(--depth);
-			temp.Next = node;
+			var current = new Node(data.First());
+			current.Next = node;
 
-			return Create(depth, temp);
+			return Create(data.Skip(1), current);
 		}
 	}
 }
