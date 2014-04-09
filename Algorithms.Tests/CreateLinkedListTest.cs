@@ -13,10 +13,10 @@ namespace Algorithms.Tests
 			Node root = Do(depth);
 
 			int i = 0;
-			while ((root = root.Next) != null)
+			do
 			{
 				i++;
-			}
+			} while ((root = root.Next) != null);
 
 			Assert.Equal(i, depth);
 		}
@@ -25,9 +25,8 @@ namespace Algorithms.Tests
 		{
 			get
 			{
-				yield return new object[] { 0 };
 				yield return new object[] { 1 };
-				yield return new object[] { 11 };
+				yield return new object[] { 10 };
 			}
 		}
 	}

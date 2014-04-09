@@ -17,23 +17,17 @@ namespace Algorithms
 
 		private static Node Create<T>(IEnumerable<T> data)
 		{
-			var node = new Node(data.FirstOrDefault());
-			Create(data.Skip(1), node);
-			return node;
-		}
+			Node head = null;
 
-		private static void Create<T>(IEnumerable<T> data, Node node)
-		{
-			if (!data.Any())
-				return;
+			foreach (T v in data)
+			{
+				Node temp = new Node(v);
+				temp.Next = head;
 
-			T value = data.First();
+				head = temp;
+			}
 
-			Node t = new Node(value);
-
-			node.Next = t;
-
-			Create(data.Skip(1), node.Next);
+			return head;
 		}
 	}
 }
