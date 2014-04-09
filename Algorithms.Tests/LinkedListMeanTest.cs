@@ -10,7 +10,7 @@ namespace Algorithms.Tests
 		[Theory, PropertyData("GetData")]
 		public void LinkedListMean(Node root, string meanValue)
 		{
-			Node mean = Do(root);
+			Node mean = Do1(root);
 
 			Assert.Equal(mean.Value, meanValue);
 		}

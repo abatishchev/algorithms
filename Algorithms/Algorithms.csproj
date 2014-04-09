@@ -40,7 +40,9 @@
     <Compile Include="LinkListPalindrome.cs" />
     <Compile Include="LinkListLooped.cs" />
     <Compile Include="Node.cs" />
+    <Compile Include="NodeEqualityComparer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReverseLinkedList.cs" />
     <Compile Include="ReverseString.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

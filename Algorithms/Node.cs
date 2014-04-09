@@ -1,9 +1,10 @@
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 
 namespace Algorithms
 {
-	[DebuggerDisplay("{Value}")]
+	[DebuggerDisplay("{ToString()}")]
 	public class Node
 	{
 		public Node()
@@ -19,31 +20,21 @@ namespace Algorithms
 
 		public Node Next;
 
-		private static Node New(Func<Tuple<bool, object>> func)
+		public override string ToString()
 		{
-			Tuple<bool, object> t;
+			if (LinkListLooped.Do1(this))
+				return Value.ToString();
 
-			Node root = null;
-			while ((t = func()).Item1)
-			{
-				root = new Node
-				{
-					Value = t.Item2,
-					Next = root
-				};
-			}
-			return root;
+			return String.Join("->", ToString(this));
 		}
 
-		public static Node New(bool isLooped)
+		private static IEnumerable<object> ToString(Node node)
 		{
-			int i = 0;
-
-			Node root = New(() => Tuple.Create(i++ <= 5, (object)i));
-
-			root.Next.Next.Next = isLooped ? root : null;
-
-			return root;
+			while (node != null)
+			{
+				yield return node.Value;
+				node = node.Next;
+			}
 		}
 	}
 }

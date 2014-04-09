@@ -7,23 +7,33 @@ namespace Algorithms
 	{
 		public static Node Do(int depth = 5)
 		{
-			return Create(Enumerable.Range(0, depth), new Node());
+			return Create(Enumerable.Range(0, depth));
 		}
 
 		public static Node Do(string data)
 		{
-			return Create(data.Reverse(), new Node());
+			return Create(data.Reverse());
 		}
 
-		private static Node Create<T>(IEnumerable<T> data, Node node)
+		private static Node Create<T>(IEnumerable<T> data)
+		{
+			var node = new Node(data.FirstOrDefault());
+			Create(data.Skip(1), node);
+			return node;
+		}
+
+		private static void Create<T>(IEnumerable<T> data, Node node)
 		{
 			if (!data.Any())
-				return node;
+				return;
 
-			var current = new Node(data.First());
-			current.Next = node;
+			T value = data.First();
 
-			return Create(data.Skip(1), current);
+			Node t = new Node(value);
+
+			node.Next = t;
+
+			Create(data.Skip(1), node.Next);
 		}
 	}
 }

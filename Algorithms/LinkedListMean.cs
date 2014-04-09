@@ -2,7 +2,7 @@
 {
 	public class LinkedListMean
 	{
-		public Node Do(Node root)
+		public static Node Do1(Node root)
 		{
 			Node slow = root, fast = root;
 
