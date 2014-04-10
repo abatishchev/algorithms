@@ -53,6 +53,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="TreeToLinkedListTest.cs" />
     <Compile Include="CreateLinkedListTest.cs" />
     <Compile Include="PreOrderTraversalTreeTest.cs" />
     <Compile Include="PostOrderTraversalTreeTest.cs" />

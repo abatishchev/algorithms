@@ -19,7 +19,7 @@ namespace Algorithms.Tests
 		{
 			get
 			{
-				yield return new object[] { CreateLinkedList.Do("FOO"), "O" };
+				yield return new object[] { CreateLinkedList.Do("BAR"), "A" };
 			}
 		}
 	}

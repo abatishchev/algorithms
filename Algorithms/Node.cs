@@ -22,14 +22,14 @@ namespace Algorithms
 
 		public override string ToString()
 		{
-			return ToString(true);
+			return ToString(true, "->");
 		}
 
-		public string ToString(bool safe)
+		public string ToString(bool safe, string sep)
 		{
 			return safe ?
 				(Value ?? new object()).ToString() :
-				String.Join("->", GetValues(this));
+				String.Join(sep, GetValues(this));
 		}
 
 		private static IEnumerable<object> GetValues(Node node)

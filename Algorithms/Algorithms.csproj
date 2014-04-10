@@ -34,6 +34,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TreeToLinkedList.cs" />
     <Compile Include="CreateLinkedList.cs" />
     <Compile Include="CreateTreeNode.cs" />
     <Compile Include="DuplicateInArray.cs" />

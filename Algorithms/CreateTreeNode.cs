@@ -17,6 +17,9 @@ namespace Algorithms
 
 			foreach (object v in data)
 			{
+				if (node == null)
+					break;
+
 				node.Left = CreateNode(ref data);
 				node.Right = CreateNode(ref data);
 
