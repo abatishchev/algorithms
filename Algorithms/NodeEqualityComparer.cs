@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Algorithms
 {
@@ -6,12 +7,15 @@ namespace Algorithms
 	{
 		public bool Equals(Node x, Node y)
 		{
-			if (x == null || y == null)
-				return false;
-
 			while (true)
 			{
-				if (x.Value != y.Value)
+				if (x == null && y == null)
+					return true;
+
+				if (x == null || y == null)
+					return false;
+
+				if (!String.Equals(x.Value.ToString(), y.Value.ToString()))
 					return false;
 
 				x = x.Next;
@@ -24,12 +28,7 @@ namespace Algorithms
 
 		public int GetHashCode(Node node)
 		{
-			int hashCode = 0;
-			while (node.Next != null)
-			{
-				hashCode ^= node.Value.GetHashCode();
-			}
-			return hashCode;
+			return node.GetHashCode();
 		}
 	}
 }

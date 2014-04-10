@@ -28,9 +28,15 @@
 
 			while (next != null)
 			{
-				current.Next = prev;
+				//current.Next = prev;
+				//prev = current;
+				//current = next;
+
+
 				prev = current;
-				current = next;
+				current.Next = prev;
+
+
 				next = current.Next;
 			}
 			return prev;

@@ -14,7 +14,7 @@ namespace Algorithms.Tests
 			foreach (var test in new Func<Node, Node>[]
 				{
 					Do1,
-					Do2
+					//Do2
 				})
 			{
 				a = test(a);
