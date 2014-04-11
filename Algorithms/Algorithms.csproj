@@ -34,6 +34,8 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FindCommonNode.cs" />
+    <Compile Include="FindTreeNode.cs" />
     <Compile Include="TreeToLinkedList.cs" />
     <Compile Include="CreateLinkedList.cs" />
     <Compile Include="CreateTreeNode.cs" />

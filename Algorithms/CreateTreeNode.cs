@@ -20,8 +20,8 @@ namespace Algorithms
 				if (node == null)
 					break;
 
-				node.Left = CreateNode(ref data);
-				node.Right = CreateNode(ref data);
+				node.Left = CreateNode(node, ref data);
+				node.Right = CreateNode(node, ref data);
 
 				node = node.Left;
 			}
@@ -29,11 +29,11 @@ namespace Algorithms
 			return root;
 		}
 
-		private static TreeNode CreateNode(ref IEnumerable<object> data)
+		private static TreeNode CreateNode(TreeNode parent, ref IEnumerable<object> data)
 		{
 			object value = Pop(ref data);
 			return value != null ?
-					   new TreeNode(value) :
+					   new TreeNode(value) { Parent = parent } :
 					   null;
 		}
 
