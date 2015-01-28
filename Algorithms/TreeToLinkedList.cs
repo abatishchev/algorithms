@@ -2,8 +2,8 @@
 {
 	public class TreeToLinkedList
 	{
-		private static Node root;
-		private static Node current;
+		private static Node _root;
+		private static Node _current;
 
 		public static Node Do(TreeNode node)
 		{
@@ -16,21 +16,21 @@
 
 			Do(node.Right);
 
-			return root;
+			return _root;
 		}
 
 		private static void Visit(TreeNode node)
 		{
-			if (root == null)
+			if (_root == null)
 			{
-				root = new Node(node.Value);
-				current = root;
+				_root = new Node(node.Value);
+				_current = _root;
 			}
 			else
 			{
 				Node t = new Node(node.Value);
-				current.Next = t;
-				current = t;
+				_current.Next = t;
+				_current = t;
 			}
 		}
 	}

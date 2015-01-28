@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Algorithms
+﻿namespace Algorithms
 {
 	public class FindTreeNode
 	{
@@ -17,10 +15,7 @@ namespace Algorithms
 				return x;
 
 			var y = Do(tree.Right, value);
-			if (y != null)
-				return y;
-
-			return null;
+			return y;
 		}
 	}
 }

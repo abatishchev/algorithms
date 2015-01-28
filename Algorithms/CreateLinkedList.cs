@@ -21,9 +21,7 @@ namespace Algorithms
 
 			foreach (T v in data)
 			{
-				Node temp = new Node(v);
-				temp.Next = head;
-
+				Node temp = new Node(v) { Next = head };
 				head = temp;
 			}
 

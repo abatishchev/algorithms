@@ -4,7 +4,7 @@
 	{
 		public static TreeNode Do(TreeNode x, TreeNode y)
 		{
-			TreeNode t = null;
+			TreeNode t;
 			while (true)
 			{
 				t = Compare(x, y);
