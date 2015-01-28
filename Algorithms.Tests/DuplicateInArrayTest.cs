@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using Xunit;
-using Xunit.Extensions;
 
 namespace Algorithms.Tests
 {
 	public class DuplicateInArrayTest : DuplicateInArray
 	{
-		[Theory, PropertyData("GetData")]
+		[Theory, MemberData("GetData")]
 		public void DuplicateInArray(int[] input, int missing)
 		{
 			foreach (var test in new Func<int[], int>[]

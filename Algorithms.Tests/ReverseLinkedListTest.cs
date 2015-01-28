@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using Xunit;
-using Xunit.Extensions;
 
 namespace Algorithms.Tests
 {
 	public class ReverseLinkedListTest : ReverseLinkedList
 	{
-		[Theory, PropertyData("GetData")]
+		[Theory, MemberData("GetData")]
 		public void ReverseLinkedList(Node a, Node b)
 		{
 			foreach (var test in new Func<Node, Node>[]

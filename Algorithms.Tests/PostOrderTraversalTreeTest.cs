@@ -1,14 +1,11 @@
-﻿
-using System.Collections.Generic;
-
+﻿using System.Collections.Generic;
 using Xunit;
-using Xunit.Extensions;
 
 namespace Algorithms.Tests
 {
 	public class PostOrderTraversalTreeTest : PostOrderTraversalTree
 	{
-		[Theory, PropertyData("GetData")]
+		[Theory, MemberData("GetData")]
 		public void PostOrderTraversalTree(TreeNode node, string expected)
 		{
 			string actual = Do(node);

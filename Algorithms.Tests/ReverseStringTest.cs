@@ -1,7 +1,5 @@
 ﻿using System;
-
 using Xunit;
-using Xunit.Extensions;
 
 namespace Algorithms.Tests
 {

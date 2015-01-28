@@ -1,13 +1,12 @@
 ﻿using System.Collections.Generic;
 
 using Xunit;
-using Xunit.Extensions;
 
 namespace Algorithms.Tests
 {
 	public class CreateLinkedListTest : CreateLinkedList
 	{
-		[Theory, PropertyData("GetData")]
+		[Theory, MemberData("GetData")]
 		public void CreateLinkedList(int depth)
 		{
 			Node root = Do(depth);

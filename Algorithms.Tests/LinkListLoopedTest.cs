@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using Xunit;
-using Xunit.Extensions;
 
 namespace Algorithms.Tests
 {
 	public class LinkListLoopedTest : LinkListLooped
 	{
-		[Theory, PropertyData("GetData")]
+		[Theory, MemberData("GetData")]
 		public void LinkListLooped(Node root, bool expected)
 		{
 			foreach (var test in new Func<Node, bool>[]
