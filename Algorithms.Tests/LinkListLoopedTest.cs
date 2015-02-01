@@ -7,9 +7,9 @@ namespace Algorithms.Tests
 	public class LinkListLoopedTest : LinkListLooped
 	{
 		[Theory, MemberData("GetData")]
-		public void LinkListLooped(Node root, bool expected)
+		public void LinkListLooped(LinkedNode root, bool expected)
 		{
-			foreach (var test in new Func<Node, bool>[]
+			foreach (var test in new Func<LinkedNode, bool>[]
 				{
 					Do1, Do2
 				})
@@ -25,7 +25,7 @@ namespace Algorithms.Tests
 			{
 				yield return new object[] { CreateLinkedList.Do(), false };
 
-				Node looped = CreateLinkedList.Do();
+				LinkedNode looped = CreateLinkedList.Do();
 				looped.Next.Next = looped;
 
 				yield return new object[] { looped, true };

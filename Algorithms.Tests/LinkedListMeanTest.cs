@@ -6,9 +6,9 @@ namespace Algorithms.Tests
 	public class LinkedListMeanTest : LinkedListMean
 	{
 		[Theory, MemberData("GetData")]
-		public void LinkedListMean(Node root, string meanValue)
+		public void LinkedListMean(LinkedNode root, string meanValue)
 		{
-			Node mean = Do1(root);
+			LinkedNode mean = Do1(root);
 
 			Assert.Equal(mean.Value, meanValue);
 		}

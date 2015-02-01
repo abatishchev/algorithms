@@ -7,9 +7,9 @@ namespace Algorithms.Tests
 	public class ReverseLinkedListTest : ReverseLinkedList
 	{
 		[Theory, MemberData("GetData")]
-		public void ReverseLinkedList(Node a, Node b)
+		public void ReverseLinkedList(LinkedNode a, LinkedNode b)
 		{
-			foreach (var test in new Func<Node, Node>[]
+			foreach (var test in new Func<LinkedNode, LinkedNode>[]
 				{
 					Do1,
 					//Do2

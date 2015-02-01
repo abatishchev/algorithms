@@ -4,9 +4,9 @@ namespace Algorithms
 {
 	public class LinkListLooped
 	{
-		public static bool Do1(Node root)
+		public static bool Do1(LinkedNode root)
 		{
-			var set = new HashSet<Node>();
+			var set = new HashSet<LinkedNode>();
 
 			while (root.Next != null)
 			{
@@ -21,9 +21,9 @@ namespace Algorithms
 			return false;
 		}
 
-		public static bool Do2(Node root)
+		public static bool Do2(LinkedNode root)
 		{
-			Node slow = root, fast = root.Next;
+			LinkedNode slow = root, fast = root.Next;
 
 			while (fast != null)
 			{

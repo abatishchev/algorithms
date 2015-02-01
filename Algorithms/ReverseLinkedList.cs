@@ -2,17 +2,17 @@
 {
 	public class ReverseLinkedList
 	{
-		public static Node Do1(Node root)
+		public static LinkedNode Do1(LinkedNode root)
 		{
 			return Do1(root, null);
 		}
 
-		public static Node Do1(Node current, Node prev)
+		public static LinkedNode Do1(LinkedNode current, LinkedNode prev)
 		{
 			if (current == null)
 				return null;
 
-			Node n = current.Next;
+			LinkedNode n = current.Next;
 			current.Next = prev;
 			if (n == null)
 				return current;
@@ -20,11 +20,11 @@
 			return Do1(n, current);
 		}
 
-		public static Node Do2(Node root)
+		public static LinkedNode Do2(LinkedNode root)
 		{
-			Node prev = null;
-			Node current = root;
-			Node next = current.Next;
+			LinkedNode prev = null;
+			LinkedNode current = root;
+			LinkedNode next = current.Next;
 
 			while (next != null)
 			{

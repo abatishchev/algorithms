@@ -2,9 +2,9 @@
 {
 	public class LinkedListMean
 	{
-		public static Node Do1(Node root)
+		public static LinkedNode Do1(LinkedNode root)
 		{
-			Node slow = root, fast = root;
+			LinkedNode slow = root, fast = root;
 
 			while (fast != null && fast.Next != null)
 			{

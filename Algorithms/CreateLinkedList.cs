@@ -5,23 +5,23 @@ namespace Algorithms
 {
 	public class CreateLinkedList
 	{
-		public static Node Do(int depth = 5)
+		public static LinkedNode Do(int depth = 5)
 		{
 			return Create(Enumerable.Range(0, depth));
 		}
 
-		public static Node Do(string data)
+		public static LinkedNode Do(string data)
 		{
 			return Create(data.Reverse());
 		}
 
-		private static Node Create<T>(IEnumerable<T> data)
+		private static LinkedNode Create<T>(IEnumerable<T> data)
 		{
-			Node head = null;
+			LinkedNode head = null;
 
 			foreach (T v in data)
 			{
-				Node temp = new Node(v) { Next = head };
+				LinkedNode temp = new LinkedNode(v) { Next = head };
 				head = temp;
 			}
 

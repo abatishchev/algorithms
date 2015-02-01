@@ -9,7 +9,7 @@ namespace Algorithms.Tests
 		[Theory, MemberData("GetData")]
 		public void TreeToLinkedList(TreeNode tree, string expected)
 		{
-			Node list = Do(tree);
+			LinkedNode list = Do(tree);
 
 			string actual = list.ToString(false, "");
 

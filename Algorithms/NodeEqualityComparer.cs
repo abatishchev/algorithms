@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace Algorithms
 {
-	public class NodeEqualityComparer : IEqualityComparer<Node>
+	public class NodeEqualityComparer : IEqualityComparer<LinkedNode>
 	{
-		public bool Equals(Node x, Node y)
+		public bool Equals(LinkedNode x, LinkedNode y)
 		{
 			while (true)
 			{
@@ -26,7 +26,7 @@ namespace Algorithms
 			}
 		}
 
-		public int GetHashCode(Node node)
+		public int GetHashCode(LinkedNode node)
 		{
 			return node.GetHashCode();
 		}

@@ -5,20 +5,20 @@ using System.Diagnostics;
 namespace Algorithms
 {
 	[DebuggerDisplay("{ToString()}")]
-	public class Node
+	public class LinkedNode
 	{
-		public Node()
+		public LinkedNode()
 		{
 		}
 
-		public Node(object value)
+		public LinkedNode(object value)
 		{
 			Value = value.ToString();
 		}
 
 		public object Value;
 
-		public Node Next;
+		public LinkedNode Next;
 
 		public override string ToString()
 		{
@@ -32,7 +32,7 @@ namespace Algorithms
 				String.Join(sep, GetValues(this));
 		}
 
-		private static IEnumerable<object> GetValues(Node node)
+		private static IEnumerable<object> GetValues(LinkedNode node)
 		{
 			while (node != null)
 			{

@@ -9,7 +9,7 @@ namespace Algorithms.Tests
 		[Theory, MemberData("GetData")]
 		public void CreateLinkedList(int depth)
 		{
-			Node root = Do(depth);
+			LinkedNode root = Do(depth);
 
 			int i = 0;
 			do
