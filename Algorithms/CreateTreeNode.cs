@@ -7,12 +7,12 @@ namespace Algorithms
 	{
 		public static TreeNode Do(string data)
 		{
-			return Do(data.AsEnumerable().Cast<object>());
+			return Do(data.AsEnumerable().Cast<object>().ToArray());
 		}
 
-		private static TreeNode Do(IEnumerable<object> data)
+		private static TreeNode Do(ICollection<object> data)
 		{
-			TreeNode node = new TreeNode(Pop(ref data));
+			TreeNode node = new TreeNode(Pop(ref data)) { Length = data.Count };
 			TreeNode root = node;
 
 			foreach (object v in data)
@@ -29,19 +29,19 @@ namespace Algorithms
 			return root;
 		}
 
-		private static TreeNode CreateNode(TreeNode parent, ref IEnumerable<object> data)
+		private static TreeNode CreateNode(TreeNode parent, ref ICollection<object> data)
 		{
 			object value = Pop(ref data);
 			return value != null ?
-					   new TreeNode(value) { Parent = parent } :
-					   null;
+				new TreeNode(value) { Parent = parent } :
+				null;
 		}
 
-		private static object Pop(ref IEnumerable<object> data)
+		private static object Pop(ref ICollection<object> data)
 		{
 			object value = data.FirstOrDefault();
 
-			data = data.Skip(1);
+			data = data.Skip(1).ToArray();
 
 			return value;
 		}

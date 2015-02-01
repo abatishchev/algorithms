@@ -21,5 +21,7 @@ namespace Algorithms
 		public TreeNode Right { get; set; }
 
 		public TreeNode Parent { get; set; }
+
+		public int Length { get; set; }
 	}
 }

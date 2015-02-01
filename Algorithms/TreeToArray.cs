@@ -4,9 +4,9 @@ namespace Algorithms
 {
 	public class TreeToArray
 	{
-		public static TreeNode[] Do(TreeNode root, int count)
+		public static TreeNode[] Do(TreeNode root)
 		{
-			var arr = new TreeNode[count];
+			var arr = new TreeNode[root.Length];
 			Do(arr, root, 0);
 			return arr;
 		}
