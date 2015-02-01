@@ -14,12 +14,12 @@ namespace Algorithms
 			Value = value;
 		}
 
-		public object Value;
+		public object Value { get; set; }
 
-		public TreeNode Left;
+		public TreeNode Left { get; set; }
 
-		public TreeNode Right;
+		public TreeNode Right { get; set; }
 
-		public TreeNode Parent;
+		public TreeNode Parent { get; set; }
 	}
 }

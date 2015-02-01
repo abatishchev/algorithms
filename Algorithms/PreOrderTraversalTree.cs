@@ -7,30 +7,25 @@ namespace Algorithms
 	{
 		public static string Do(TreeNode node)
 		{
-			return String.Concat(InOrder(node));
+			return String.Concat(PreOrder(node));
 		}
 
-		private static IEnumerable<object> InOrder(TreeNode node)
+		private static IEnumerable<object> PreOrder(TreeNode node)
 		{
 			if (node == null)
 				yield break;
 
-			yield return Visit(node);
+			yield return node.Value;
 
-			foreach (object v in InOrder(node.Left))
+			foreach (object v in PreOrder(node.Left))
 			{
 				yield return v;
 			}
 
-			foreach (object v in InOrder(node.Right))
+			foreach (object v in PreOrder(node.Right))
 			{
 				yield return v;
 			}
-		}
-
-		private static object Visit(TreeNode node)
-		{
-			return node.Value;
 		}
 	}
 }

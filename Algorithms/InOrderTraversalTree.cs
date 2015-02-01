@@ -20,17 +20,12 @@ namespace Algorithms
 				yield return v;
 			}
 
-			yield return Visit(node);
+			yield return node.Value;
 
 			foreach (object v in InOrder(node.Right))
 			{
 				yield return v;
 			}
-		}
-
-		private static object Visit(TreeNode node)
-		{
-			return node.Value;
 		}
 	}
 }

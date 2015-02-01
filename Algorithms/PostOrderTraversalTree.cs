@@ -25,12 +25,7 @@ namespace Algorithms
 				yield return v;
 			}
 
-			yield return Visit(node);
-		}
-
-		private static object Visit(TreeNode node)
-		{
-			return node.Value;
+			yield return node.Value;
 		}
 	}
 }
