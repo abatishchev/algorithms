@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using Xunit;
 
 namespace Algorithms.Tests
@@ -19,7 +18,6 @@ namespace Algorithms.Tests
 			{
 				if (Math.Log(++i, 2) % 1 == 0)
 				{
-					Debug.WriteLine("{0} is last node on level {1}", n.Value, ++j);
 					list.Add((char)n.Value);
 				}
 			};
