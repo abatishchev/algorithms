@@ -35,7 +35,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BreadthFirstTraversal.cs" />
-    <Compile Include="ConnectTreeNodesAtSameLevel.cs" />
     <Compile Include="FindCommonNode.cs" />
     <Compile Include="FindTreeNode.cs" />
     <Compile Include="MultiByteCharString.cs" />
