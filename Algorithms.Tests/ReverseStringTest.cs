@@ -5,7 +5,8 @@ namespace Algorithms.Tests
 {
 	public class ReverseStringTest : ReverseString
 	{
-		[Theory, InlineData("abcdef", "fedcba")]
+		[Theory]
+		[InlineData("abcdef", "fedcba")]
 		public void ReverseString(string input, string expected)
 		{
 			foreach (var test in new Func<string, string>[]

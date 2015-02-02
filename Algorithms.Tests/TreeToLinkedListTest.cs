@@ -1,27 +1,20 @@
-﻿using System.Collections.Generic;
-using Xunit;
+﻿using Xunit;
 
 namespace Algorithms.Tests
 {
 	public class TreeToLinkedListTest : TreeToLinkedList
 	{
-
-		[Theory, MemberData("GetData")]
-		public void TreeToLinkedList(TreeNode tree, string expected)
+		[Theory]
+		[InlineData("ABCDEF", "FDBEAC")]
+		public void TreeToLinkedList(string data, string expected)
 		{
-			LinkedNode list = Do(tree);
+			var root = CreateTreeNode.Do(data);
+
+			LinkedNode list = Do(root);
 
 			string actual = list.ToString(false, "");
 
 			Assert.Equal(actual, expected);
-		}
-
-		public static IEnumerable<object[]> GetData
-		{
-			get
-			{
-				yield return new object[] { CreateTreeNode.Do("ABCDEF"), "FDBEAC" };
-			}
 		}
 	}
 }

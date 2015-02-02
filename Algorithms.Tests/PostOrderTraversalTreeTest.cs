@@ -1,24 +1,18 @@
-﻿using System.Collections.Generic;
-using Xunit;
+﻿using Xunit;
 
 namespace Algorithms.Tests
 {
 	public class PostOrderTraversalTreeTest : PostOrderTraversalTree
 	{
-		[Theory, MemberData("GetData")]
-		public void PostOrderTraversalTree(TreeNode node, string expected)
+		[Theory]
+		[InlineData("ABCD", "DBCA")]
+		public void PostOrderTraversalTree(string data, string expected)
 		{
-			string actual = Do(node);
+			var root = CreateTreeNode.Do(data);
+
+			string actual = Do(root);
 
 			Assert.Equal(actual, expected);
-		}
-
-		public static IEnumerable<object[]> GetData
-		{
-			get
-			{
-				yield return new object[] { CreateTreeNode.Do("ABCD"), "DBCA" };
-			}
 		}
 	}
 }

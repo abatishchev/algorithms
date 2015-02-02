@@ -12,6 +12,8 @@ namespace Algorithms.Tests
 			TreeNode root = CreateTreeNode.Do(data);
 
 			Do(root);
+
+			throw new NotImplementedException();
 		}
 	}
 }

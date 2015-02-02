@@ -1,24 +1,18 @@
-﻿using System.Collections.Generic;
-using Xunit;
+﻿using Xunit;
 
 namespace Algorithms.Tests
 {
 	public class LinkedListMeanTest : LinkedListMean
 	{
-		[Theory, MemberData("GetData")]
-		public void LinkedListMean(LinkedNode root, string meanValue)
+		[Theory]
+		[InlineData("BAR", "A")]
+		public void LinkedListMean(string data, string expected)
 		{
-			LinkedNode mean = Do1(root);
+			var root = CreateLinkedList.Do(data);
 
-			Assert.Equal(mean.Value, meanValue);
-		}
+			LinkedNode actual = Do1(root);
 
-		public static IEnumerable<object[]> GetData
-		{
-			get
-			{
-				yield return new object[] { CreateLinkedList.Do("BAR"), "A" };
-			}
+			Assert.Equal(actual.Value, expected);
 		}
 	}
 }

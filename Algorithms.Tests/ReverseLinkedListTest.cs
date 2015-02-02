@@ -1,13 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using Xunit;
 
 namespace Algorithms.Tests
 {
 	public class ReverseLinkedListTest : ReverseLinkedList
 	{
-		[Theory, MemberData("GetData")]
-		public void ReverseLinkedList(LinkedNode a, LinkedNode b)
+		[Theory]
+		[InlineData("BAR", "RAB")]
+		[InlineData("AB", "BA")]
+		public void ReverseLinkedList(string a, string b)
 		{
 			foreach (var test in new Func<LinkedNode, LinkedNode>[]
 				{
@@ -15,17 +16,11 @@ namespace Algorithms.Tests
 					//Do2
 				})
 			{
-				a = test(a);
-				Assert.Equal(a, b, new NodeEqualityComparer());
-			}
-		}
 
-		public static IEnumerable<object[]> GetData
-		{
-			get
-			{
-				yield return new object[] { CreateLinkedList.Do("BAR"), CreateLinkedList.Do("RAB") };
-				yield return new object[] { CreateLinkedList.Do("AB"), CreateLinkedList.Do("BA") };
+				LinkedNode x = CreateLinkedList.Do(a), y = CreateLinkedList.Do(b);
+
+				x = test(x);
+				Assert.Equal(x, y, new NodeEqualityComparer());
 			}
 		}
 	}

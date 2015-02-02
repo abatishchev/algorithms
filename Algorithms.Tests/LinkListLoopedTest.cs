@@ -6,7 +6,8 @@ namespace Algorithms.Tests
 {
 	public class LinkListLoopedTest : LinkListLooped
 	{
-		[Theory, MemberData("GetData")]
+		[Theory]
+		[MemberData("GetData")]
 		public void LinkListLooped(LinkedNode root, bool expected)
 		{
 			foreach (var test in new Func<LinkedNode, bool>[]

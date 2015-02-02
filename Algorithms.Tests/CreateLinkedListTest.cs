@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
-using Xunit;
+﻿using Xunit;
 
 namespace Algorithms.Tests
 {
 	public class CreateLinkedListTest : CreateLinkedList
 	{
-		[Theory, MemberData("GetData")]
+		[Theory]
+		[InlineData(1)]
+		[InlineData(10)]
 		public void CreateLinkedList(int depth)
 		{
 			LinkedNode root = Do(depth);
@@ -17,15 +18,6 @@ namespace Algorithms.Tests
 			} while ((root = root.Next) != null);
 
 			Assert.Equal(i, depth);
-		}
-
-		public static IEnumerable<object[]> GetData
-		{
-			get
-			{
-				yield return new object[] { 1 };
-				yield return new object[] { 10 };
-			}
 		}
 	}
 }

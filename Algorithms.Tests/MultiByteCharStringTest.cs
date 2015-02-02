@@ -7,7 +7,8 @@ namespace Algorithms.Tests
 {
 	public class MultiByteCharStringTest : MultiByteCharString
 	{
-		[Theory, MemberData("GetData")]
+		[Theory]
+		[MemberData("GetData")]
 		public void MultiByteCharString(string input, string expected)
 		{
 			MultiByteChar[] result = Do(input);
