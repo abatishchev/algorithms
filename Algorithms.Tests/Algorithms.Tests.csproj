@@ -59,6 +59,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="ConnectTreeNodesAtSameLevelTest.cs" />
     <Compile Include="FindCommonNodeTest.cs" />
     <Compile Include="MultiByteCharStringTest.cs" />
     <Compile Include="TreeToLinkedListTest.cs" />

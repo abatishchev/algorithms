@@ -6,7 +6,7 @@ namespace Algorithms
 	{
 		public static TreeNode[] Do(TreeNode root)
 		{
-			var arr = new TreeNode[root.Length];
+			var arr = new TreeNode[root.Length + 1];
 			Do(arr, root, 0);
 			return arr;
 		}
