@@ -38,6 +38,7 @@
     <Compile Include="ConnectNodesAtSameLevel.cs" />
     <Compile Include="FindCommonNode.cs" />
     <Compile Include="FindTreeNode.cs" />
+    <Compile Include="FixedSizePriorityQueue.cs" />
     <Compile Include="MultiByteCharString.cs" />
     <Compile Include="TreeToArray.cs" />
     <Compile Include="TreeToLinkedList.cs" />
