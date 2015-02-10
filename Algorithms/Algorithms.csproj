@@ -35,7 +35,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BreadthFirstTraversal.cs" />
-    <Compile Include="CheckParenthesis.cs" />
+    <Compile Include="BalancedParenthesis.cs" />
     <Compile Include="ConnectNodesAtSameLevel.cs" />
     <Compile Include="FindCommonNode.cs" />
     <Compile Include="FindTreeNode.cs" />

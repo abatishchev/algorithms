@@ -59,7 +59,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="CheckParenthesisTest.cs" />
+    <Compile Include="BalancedParenthesisTest.cs" />
     <Compile Include="ConnectNodesAtSameLevelTest.cs" />
     <Compile Include="FindLastNodeOnLevelTest.cs" />
     <Compile Include="FindCommonNodeTest.cs" />
