@@ -59,10 +59,13 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="CheckParenthesisTest.cs" />
     <Compile Include="ConnectNodesAtSameLevelTest.cs" />
     <Compile Include="FindLastNodeOnLevelTest.cs" />
     <Compile Include="FindCommonNodeTest.cs" />
     <Compile Include="MultiByteCharStringTest.cs" />
+    <Compile Include="NthOrderStatisticsTest.cs" />
+    <Compile Include="TopElementsFromSourcesTest.cs" />
     <Compile Include="TreeToLinkedListTest.cs" />
     <Compile Include="CreateLinkedListTest.cs" />
     <Compile Include="PreOrderTraversalTreeTest.cs" />
