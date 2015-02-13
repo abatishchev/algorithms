@@ -42,6 +42,7 @@
     <Compile Include="FixedSizePriorityQueue.cs" />
     <Compile Include="MultiByteCharString.cs" />
     <Compile Include="NthOrderStatistics.cs" />
+    <Compile Include="Quicksort.cs" />
     <Compile Include="TreeToArray.cs" />
     <Compile Include="TreeToLinkedList.cs" />
     <Compile Include="CreateLinkedList.cs" />

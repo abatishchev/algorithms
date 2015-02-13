@@ -65,6 +65,7 @@
     <Compile Include="FindCommonNodeTest.cs" />
     <Compile Include="MultiByteCharStringTest.cs" />
     <Compile Include="NthOrderStatisticsTest.cs" />
+    <Compile Include="QuicksortTest.cs" />
     <Compile Include="TopElementsFromSourcesTest.cs" />
     <Compile Include="TreeToLinkedListTest.cs" />
     <Compile Include="CreateLinkedListTest.cs" />
