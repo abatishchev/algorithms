@@ -78,6 +78,7 @@
     <Compile Include="DuplicateInArrayTest.cs" />
     <Compile Include="ReverseLinkedListTest.cs" />
     <Compile Include="ReverseStringTest.cs" />
+    <Compile Include="TriangleTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Algorithms\Algorithms.csproj">
