@@ -32,10 +32,13 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BreadthFirstTraversal.cs" />
     <Compile Include="BalancedParenthesis.cs" />
+    <Compile Include="BuildOrder.cs" />
+    <Compile Include="CircularQueue.cs" />
     <Compile Include="ConnectNodesAtSameLevel.cs" />
     <Compile Include="FindCommonNode.cs" />
     <Compile Include="FindTreeNode.cs" />
