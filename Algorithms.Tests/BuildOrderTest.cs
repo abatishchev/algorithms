@@ -20,55 +20,38 @@ namespace Algorithms.Tests
 		{
 			yield return new object[]
 			{
-				new[]
-				{
-					new Operation("A"),
-					new Operation("B"),
-					new Operation("C"),
-					new Operation("D"),
-
-					new Operation("M"),
-					new Operation("N"),
-
-					new Operation("X"),
-					new Operation("Y"),
-					new Operation("Z")
-				},
-				new[]
-				{
-					new OperationDependency("B", "A"),
-					new OperationDependency("C", "A"),
-					new OperationDependency("D", "C"),
-
-					new OperationDependency("Y", "X"),
-					new OperationDependency("Z", "Y")
-
-				},
-				new[]
-				{
-					new[]
-					{
-						new Operation("A"),
-						new Operation("B"),
-						new Operation("C"),
-						new Operation("D")
-					},
-					new[]
-					{
-						new Operation("M"),
-					},
-					new[]
-					{
-						new Operation("N"),
-					},
-					new[]
-					{
-						new Operation("Z"),
-						new Operation("Y"),
-						new Operation("X")
-					}
-				}
+				"ABCDMNXYZ".ToOperationList(),
+				"B-A, C-A, D-C, Y-X, Z-Y".ToDependencynList(),
+				"ABCD, M, N, XYZ".ToBuildOrder(),
 			};
+		}
+	}
+
+	internal static class StringExtensions
+	{
+		public static Operation[] ToOperationList(this string input)
+		{
+			return input.Select(o => new Operation(o.ToString()))
+						.ToArray();
+		}
+
+		public static OperationDependency[] ToDependencynList(this string input)
+		{
+			return input.Split(',')
+						.Select(p => p.Trim())
+						.Select(p => p.Split('-'))
+						.Select(a => new OperationDependency(a[0], a[1]))
+						.ToArray();
+		}
+
+		public static Operation[][] ToBuildOrder(this string input)
+		{
+			return input.Split(',')
+						.Select(p => p.Trim())
+						.Select(p => p.Select(c => c.ToString())
+									  .Select(c => new Operation(c.ToString()))
+									  .ToArray())
+						.ToArray();
 		}
 	}
 }

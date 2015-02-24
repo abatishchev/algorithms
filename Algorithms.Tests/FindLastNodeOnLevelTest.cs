@@ -12,7 +12,7 @@ namespace Algorithms.Tests
 		{
 			TreeNode root = CreateTreeNode.Do(data);
 
-			int i = 1, j = 0;
+			int i = 1;
 			List<char> list = new List<char>(data.Length);
 			Action<TreeNode> visit = n =>
 			{
