@@ -4,6 +4,19 @@ using System.Diagnostics;
 
 namespace Algorithms
 {
+	[DebuggerDisplay("{Item}")]
+	public class LinkedNode<T>
+	{
+		public LinkedNode(T item)
+		{
+			Item = item;
+		}
+
+		public T Item { get; private set; }
+
+		public LinkedNode<T> Next { get; set; }
+	}
+
 	[DebuggerDisplay("{ToString()}")]
 	public class LinkedNode
 	{
