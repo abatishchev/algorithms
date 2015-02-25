@@ -47,6 +47,7 @@
     <Compile Include="FindTreeNode.cs" />
     <Compile Include="FixedSizePriorityQueue.cs" />
     <Compile Include="LongestString.cs" />
+    <Compile Include="MergeSortedSeq.cs" />
     <Compile Include="MissingNumber.cs" />
     <Compile Include="MultiByteCharString.cs" />
     <Compile Include="NthOrderStatistics.cs" />
