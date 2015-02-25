@@ -72,6 +72,7 @@
     <Compile Include="CircularQueueTest.cs" />
     <Compile Include="ConnectNodesAtSameLevelTest.cs" />
     <Compile Include="LongestStringTest.cs" />
+    <Compile Include="MissingNumberTest.cs" />
     <Compile Include="StackTest.cs" />
     <Compile Include="FindLastNodeOnLevelTest.cs" />
     <Compile Include="FindCommonNodeTest.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="NthOrderStatisticsTest.cs" />
     <Compile Include="QueueTest.cs" />
     <Compile Include="QuicksortTest.cs" />
+    <Compile Include="StringPermutationsTest.cs" />
     <Compile Include="TopElementsFromSourcesTest.cs" />
     <Compile Include="TreeToLinkedListTest.cs" />
     <Compile Include="CreateLinkedListTest.cs" />
