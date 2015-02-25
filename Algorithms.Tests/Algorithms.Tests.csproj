@@ -71,6 +71,7 @@
     <Compile Include="BuildOrderTest.cs" />
     <Compile Include="CircularQueueTest.cs" />
     <Compile Include="ConnectNodesAtSameLevelTest.cs" />
+    <Compile Include="LongestStringTest.cs" />
     <Compile Include="StackTest.cs" />
     <Compile Include="FindLastNodeOnLevelTest.cs" />
     <Compile Include="FindCommonNodeTest.cs" />

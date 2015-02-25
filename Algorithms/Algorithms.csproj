@@ -46,6 +46,7 @@
     <Compile Include="FindCommonNode.cs" />
     <Compile Include="FindTreeNode.cs" />
     <Compile Include="FixedSizePriorityQueue.cs" />
+    <Compile Include="LongestString.cs" />
     <Compile Include="MultiByteCharString.cs" />
     <Compile Include="NthOrderStatistics.cs" />
     <Compile Include="LinkedListQueue.cs" />
