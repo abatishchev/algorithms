@@ -6,14 +6,29 @@ namespace Algorithms.Tests
 	public class ConnectNodesAtSameLevelTest : ConnectNodesAtSameLevel
 	{
 		[Theory]
-		[InlineData("ABCDEFGHIJKLMNOP")]
+		[InlineData("ABCDEF")]
 		public void ConnectTreeNodesAtSameLevel(string data)
 		{
-			TreeNode root = CreateTreeNode.Do(data);
+			TreeNode root = new TreeNode('A')
+			{
+				Left = new TreeNode('B')
+				{
+					Left = new TreeNode('D'),
+					Right = new TreeNode('E')
+				},
+				Right = new TreeNode('C')
+				{
+					Left = new TreeNode('F'),
+					Right = new TreeNode('G')
+				}
+			};
 
-			Do(root);
+			SpeficyNext(root);
 
-			throw new NotImplementedException();
+			var e = FindTreeNode.Do(root, 'E');
+			var f = FindTreeNode.Do(root, 'F');
+
+			Assert.Equal(e.Next.Value, f.Value);
 		}
 	}
 }

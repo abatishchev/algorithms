@@ -1,8 +1,9 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 
 namespace Algorithms
 {
-	[DebuggerDisplay("{Value}")]
+	[DebuggerDisplay("{ToString()}")]
 	public class TreeNode
 	{
 		public TreeNode()
@@ -25,5 +26,17 @@ namespace Algorithms
 		public int Length { get; set; }
 
 		public int Level { get; set; }
+
+		public TreeNode Next { get; set; }
+
+		public override string ToString()
+		{
+			return String.Format("Value={0}, Left={1}, Right={2}", ToString(this), ToString(Left), ToString(Right));
+		}
+
+		private static string ToString(TreeNode node)
+		{
+			return (node != null && node.Value != null ? node.Value : "null").ToString();
+		}
 	}
 }
