@@ -71,12 +71,12 @@
     <Compile Include="BuildOrderTest.cs" />
     <Compile Include="CircularQueueTest.cs" />
     <Compile Include="ConnectNodesAtSameLevelTest.cs" />
-    <Compile Include="LinkedListStackTest.cs" />
+    <Compile Include="StackTest.cs" />
     <Compile Include="FindLastNodeOnLevelTest.cs" />
     <Compile Include="FindCommonNodeTest.cs" />
     <Compile Include="MultiByteCharStringTest.cs" />
     <Compile Include="NthOrderStatisticsTest.cs" />
-    <Compile Include="LinkedListQueueTest.cs" />
+    <Compile Include="QueueTest.cs" />
     <Compile Include="QuicksortTest.cs" />
     <Compile Include="TopElementsFromSourcesTest.cs" />
     <Compile Include="TreeToLinkedListTest.cs" />

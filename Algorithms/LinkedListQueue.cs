@@ -1,6 +1,6 @@
 ﻿namespace Algorithms
 {
-	public class LinkedListQueue<T>
+	public class LinkedListQueue<T> : IQueue<T>
 	{
 		private LinkedNode<T> _tail;
 		private LinkedNode<T> _head;

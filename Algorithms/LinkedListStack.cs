@@ -1,6 +1,6 @@
 namespace Algorithms
 {
-	public class LinkedListStack<T>
+	public class LinkedListStack<T> : IStack<T>
 	{
 		private LinkedNode<T> _top;
 

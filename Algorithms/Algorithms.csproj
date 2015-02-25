@@ -40,6 +40,8 @@
     <Compile Include="BuildOrder.cs" />
     <Compile Include="CircularQueue.cs" />
     <Compile Include="ConnectNodesAtSameLevel.cs" />
+    <Compile Include="IQueue.cs" />
+    <Compile Include="IStack.cs" />
     <Compile Include="LinkedListStack.cs" />
     <Compile Include="FindCommonNode.cs" />
     <Compile Include="FindTreeNode.cs" />
@@ -47,7 +49,9 @@
     <Compile Include="MultiByteCharString.cs" />
     <Compile Include="NthOrderStatistics.cs" />
     <Compile Include="LinkedListQueue.cs" />
+    <Compile Include="QueueStack.cs" />
     <Compile Include="Quicksort.cs" />
+    <Compile Include="StackQueue.cs" />
     <Compile Include="TreeToArray.cs" />
     <Compile Include="TreeToLinkedList.cs" />
     <Compile Include="CreateLinkedList.cs" />
