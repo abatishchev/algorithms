@@ -2,7 +2,7 @@ namespace Algorithms
 {
 	public interface IQueue<T>
 	{
-		void Enqueue(T item);
+		bool Enqueue(T item);
 
 		T Dequeue();
 	}

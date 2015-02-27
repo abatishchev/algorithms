@@ -5,7 +5,7 @@
 		private LinkedNode<T> _tail;
 		private LinkedNode<T> _head;
 
-		public void Enqueue(T item)
+		public bool Enqueue(T item)
 		{
 			var node = new LinkedNode<T>(item);
 
@@ -19,6 +19,8 @@
 				_tail.Next = node;
 				_tail = _tail.Next;
 			}
+
+			return true;
 		}
 
 		public T Dequeue()

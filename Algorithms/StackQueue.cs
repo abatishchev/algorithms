@@ -7,9 +7,11 @@ namespace Algorithms
 		private readonly Stack<T> _input = new Stack<T>();
 		private readonly Stack<T> _output = new Stack<T>();
 
-		public void Enqueue(T item)
+		public bool Enqueue(T item)
 		{
 			_input.Push(item);
+
+			return true;
 		}
 
 		public T Dequeue()

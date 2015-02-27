@@ -32,7 +32,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web.Services" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BreadthFirstTraversal.cs" />
@@ -60,6 +59,7 @@
     <Compile Include="QueueStack.cs" />
     <Compile Include="Quicksort.cs" />
     <Compile Include="StackQueue.cs" />
+    <Compile Include="TopElementsFromSources.cs" />
     <Compile Include="TreeToArray.cs" />
     <Compile Include="TreeToLinkedList.cs" />
     <Compile Include="CreateLinkedList.cs" />
