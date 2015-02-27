@@ -52,6 +52,7 @@
     <Compile Include="MultiByteCharString.cs" />
     <Compile Include="NthOrderStatistics.cs" />
     <Compile Include="LinkedListQueue.cs" />
+    <Compile Include="NumberOfDigits.cs" />
     <Compile Include="RadixSort.cs" />
     <Compile Include="StringPermutations.cs" />
     <Compile Include="QueueStack.cs" />
