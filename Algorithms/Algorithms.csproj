@@ -40,6 +40,7 @@
     <Compile Include="BuildOrder.cs" />
     <Compile Include="CircularQueue.cs" />
     <Compile Include="ConnectNodesAtSameLevel.cs" />
+    <Compile Include="CountSort.cs" />
     <Compile Include="IQueue.cs" />
     <Compile Include="IStack.cs" />
     <Compile Include="LinkedListStack.cs" />
@@ -54,6 +55,7 @@
     <Compile Include="LinkedListQueue.cs" />
     <Compile Include="NumberOfDigits.cs" />
     <Compile Include="RadixSort.cs" />
+    <Compile Include="ISort.cs" />
     <Compile Include="StringPermutations.cs" />
     <Compile Include="QueueStack.cs" />
     <Compile Include="Quicksort.cs" />

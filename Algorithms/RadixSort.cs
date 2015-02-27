@@ -4,16 +4,11 @@ using System.Linq;
 
 namespace Algorithms
 {
-	public class RadixSort
+	public class RadixSort : ISort
 	{
-		private static IList<IList<int>> InitBuckets(int i)
-		{
-			return Enumerable.Range(0, i).Select(_ => new List<int>()).ToArray();
-		}
-
 		public void Sort(IList<int> input)
 		{
-			int maxLength = input.Max().ToString().Length;
+			int maxLength = GetMaxLength(input);
 
 			for (int i = 0; i < maxLength; i++)
 			{
@@ -21,7 +16,7 @@ namespace Algorithms
 
 				foreach (int d in input)
 				{
-					int digit = (int)((d % Math.Pow(10, i + 1)) / Math.Pow(10, i));
+					var digit = GetDigit(d, i);
 
 					buckets[digit].Add(d);
 				}
@@ -35,6 +30,21 @@ namespace Algorithms
 					}
 				}
 			}
+		}
+
+		private static int GetMaxLength(IList<int> input)
+		{
+			return input.Max().ToString().Length;
+		}
+
+		private static IList<IList<int>> InitBuckets(int i)
+		{
+			return Enumerable.Range(0, i).Select(_ => new List<int>()).ToArray();
+		}
+
+		private static int GetDigit(int d, int i)
+		{
+			return (int)((d % Math.Pow(10, i + 1)) / Math.Pow(10, i));
 		}
 	}
 }

@@ -77,7 +77,7 @@
     <Compile Include="MergeSortedSeqTest.cs" />
     <Compile Include="MissingNumberTest.cs" />
     <Compile Include="NumberOfDigitsTest.cs" />
-    <Compile Include="RadixSortTest.cs" />
+    <Compile Include="SortTest.cs" />
     <Compile Include="StackTest.cs" />
     <Compile Include="FindLastNodeOnLevelTest.cs" />
     <Compile Include="FindCommonNodeTest.cs" />
