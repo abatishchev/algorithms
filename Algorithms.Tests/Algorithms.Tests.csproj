@@ -85,7 +85,6 @@
     <Compile Include="MultiByteCharStringTest.cs" />
     <Compile Include="NthOrderStatisticsTest.cs" />
     <Compile Include="QueueTest.cs" />
-    <Compile Include="QuicksortTest.cs" />
     <Compile Include="StringPermutationsTest.cs" />
     <Compile Include="TopElementsFromSourcesTest.cs" />
     <Compile Include="TreeToLinkedListTest.cs" />

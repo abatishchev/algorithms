@@ -18,9 +18,9 @@ namespace Algorithms
 			{
 				int cur = list[i];
 				if (cur <= pivot)
-					Swap(list, i, ++lastLow);
+					list.Swap(i, ++lastLow);
 			}
-			Swap(list, end, ++lastLow);
+			list.Swap(end, ++lastLow);
 			return lastLow;
 		}
 
@@ -45,15 +45,6 @@ namespace Algorithms
 		public static int NthOrderStatistic(IList<int> list, int n)
 		{
 			return NthOrderStatistic(list, n, 0, list.Count - 1);
-		}
-
-		public static void Swap(IList<int> list, int i, int j)
-		{
-			if (i == j)   //This check is not required but Partition function may make many calls so its for perf reason
-				return;
-			var temp = list[i];
-			list[i] = list[j];
-			list[j] = temp;
 		}
 
 		public static int Median(IList<int> list)

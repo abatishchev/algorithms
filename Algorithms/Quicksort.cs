@@ -1,24 +1,25 @@
-﻿namespace Algorithms
+﻿using System.Collections.Generic;
+
+namespace Algorithms
 {
-	public class Quicksort
+	public class Quicksort : ISort
 	{
-		public int[] Do(int[] arr)
+		public void Sort(IList<int> input)
 		{
-			quicksort(arr, 0, arr.Length - 1);
-			return arr;
+			Sort(input, 0, input.Count - 1);
 		}
 
-		public void quicksort(int[] input, int low, int high)
+		private static void Sort(IList<int> input, int low, int high)
 		{
 			if (low < high)
 			{
-				var pivot = partition(input, low, high);
-				quicksort(input, low, pivot - 1);
-				quicksort(input, pivot + 1, high);
+				var pivot = Partition(input, low, high);
+				Sort(input, low, pivot - 1);
+				Sort(input, pivot + 1, high);
 			}
 		}
 
-		private static int partition(int[] input, int low, int high)
+		private static int Partition(IList<int> input, int low, int high)
 		{
 			int pivot = input[low];
 
@@ -32,20 +33,13 @@
 
 				if (low < high)
 				{
-					swap(input, low, high);
+					input.Swap(low, high);
 				}
 				else
 				{
 					return high;
 				}
 			}
-		}
-
-		private static void swap(int[] input, int a, int b)
-		{
-			var temp = input[a];
-			input[a] = input[b];
-			input[b] = temp;
 		}
 	}
 }

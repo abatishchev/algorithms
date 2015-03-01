@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using FluentAssertions;
 using Xunit;
 
@@ -9,21 +10,23 @@ namespace Algorithms.Tests
 	{
 		[Theory]
 		[MemberData("GetData")]
-		public void Sort(Type t, IList<int> input, IList<int> expected)
+		public void Sort(Type t, IList<int> input)
 		{
 			var sort = (ISort)Activator.CreateInstance(t);
+
 			sort.Sort(input);
 
-			input.ShouldBeEquivalentTo(expected);
+			input.ShouldBeEquivalentTo(input.OrderBy(i => i));
 		}
 
 		public static IEnumerable<object[]> GetData()
 		{
-			var originial = new[] { 102, 23, 1, 301, 4, 89 };
-			var sorted = new[] { 1, 4, 23, 89, 102, 301 };
+			Func<int[]> gen = () => new[] { 102, 23, 1, 301, 4, 89 };
 
-			yield return new object[] { typeof(RadixSort), originial, sorted };
-			yield return new object[] { typeof(CountSort), originial, sorted };
+			yield return new object[] { typeof(RadixSort), gen() };
+			yield return new object[] { typeof(CountSort), gen() };
+			yield return new object[] { typeof(BubbleSort), gen() };
+			yield return new object[] { typeof(Quicksort), gen() };
 		}
 	}
 }

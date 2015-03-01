@@ -36,10 +36,12 @@
   <ItemGroup>
     <Compile Include="BreadthFirstTraversal.cs" />
     <Compile Include="BalancedParenthesis.cs" />
+    <Compile Include="BubbleSort.cs" />
     <Compile Include="BuildOrder.cs" />
     <Compile Include="CircularQueue.cs" />
     <Compile Include="ConnectNodesAtSameLevel.cs" />
     <Compile Include="CountSort.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="Horsepool.cs" />
     <Compile Include="IQueue.cs" />
     <Compile Include="IStack.cs" />
