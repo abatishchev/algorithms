@@ -40,6 +40,7 @@
     <Compile Include="CircularQueue.cs" />
     <Compile Include="ConnectNodesAtSameLevel.cs" />
     <Compile Include="CountSort.cs" />
+    <Compile Include="Horsepool.cs" />
     <Compile Include="IQueue.cs" />
     <Compile Include="IStack.cs" />
     <Compile Include="LinkedListStack.cs" />
