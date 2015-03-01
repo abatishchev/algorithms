@@ -99,6 +99,7 @@
     <Compile Include="ReverseLinkedListTest.cs" />
     <Compile Include="ReverseStringTest.cs" />
     <Compile Include="TriangleTest.cs" />
+    <Compile Include="WildcardTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Algorithms\Algorithms.csproj">

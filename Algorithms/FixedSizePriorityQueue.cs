@@ -20,7 +20,16 @@ namespace Algorithms
 
 		public bool Enqueue(int item)
 		{
-			if (_list.Any() && _comparer(item, _list.First()))
+			if (_list.Count < _capacity)
+			{
+				_list.Add(item);
+
+				_list = _list.OrderBy(i => i).ToList();
+
+				return true;
+			}
+
+			if (!_comparer(item, _list.Last()))
 				return false;
 
 			_list.Add(item);

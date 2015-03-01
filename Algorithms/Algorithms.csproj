@@ -77,6 +77,7 @@
     <Compile Include="ReverseString.cs" />
     <Compile Include="TreeNode.cs" />
     <Compile Include="Triangle.cs" />
+    <Compile Include="Wildcard.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

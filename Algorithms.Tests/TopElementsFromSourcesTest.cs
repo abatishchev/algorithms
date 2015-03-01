@@ -12,14 +12,16 @@ namespace Algorithms.Tests
 		[MemberData("GetData")]
 		public void TopElementsFromSources(int[][] sources, int[] expected)
 		{
-			var actual = GetTopElements(3, sources);
+			const int top = 3;
 
-			if (expected != null)
+			var actual = GetTopElements(top, sources);
+
+			if (expected == null)
 			{
-				actual.ShouldBeEquivalentTo(expected);
+				expected = sources.SelectMany(i => i).OrderBy(i => i).Take(top).ToArray();
 			}
+			actual.ShouldBeEquivalentTo(expected);
 		}
-
 
 		public static IEnumerable<object[]> GetData()
 		{
@@ -35,13 +37,13 @@ namespace Algorithms.Tests
 			};
 
 			var random = new Random();
-			var sources = Enumerable.Range(0, 10)
-			                        .Select(s => random.Next(0, 100))
-			                        .Select(r => new { Low = r, High = random.Next(r, random.Next(r + 1, 100)) })
-			                        .Select(x => Enumerable.Range(x.Low, x.High)
-			                                               .OrderBy(i => i)
-			                                               .ToArray())
-			                        .ToArray();
+			var sources = Enumerable.Range(0, 3)
+									.Select(s => random.Next(0, 50))
+									.Select(r => new { Low = r, High = random.Next(r, random.Next(r + 1, r + 25)) })
+									.Select(x => Enumerable.Range(x.Low, x.High)
+														   .OrderBy(i => i)
+														   .ToArray())
+									.ToArray();
 			yield return new object[] { sources, null };
 		}
 	}

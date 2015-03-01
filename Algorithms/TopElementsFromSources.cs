@@ -7,28 +7,31 @@ namespace Algorithms
 	{
 		public int[] GetTopElements(int top, int[][] sources)
 		{
-			var queue = new FixedSizePriorityQueue(top, (x, y) => x <= y);
+			var queue = new FixedSizePriorityQueue(top, (x, y) => x < y);
 
 			bool take = true;
 
+			var arr = sources.Select((s, i) => new
+			{
+				Source = s,
+				Enumerator = s.GetEnumerator(),
+				Index = i
+			}).ToArray();
+
 			do
 			{
-				var remove = new List<int[]>();
-				foreach (var x in sources.Select(s => new { Source = s, Enumerator = s.GetEnumerator() }))
+				foreach (var x in arr)
 				{
 					if (x.Enumerator.MoveNext())
 					{
-						bool r = queue.Enqueue((int)x.Enumerator.Current);
-						if (take)
-							take = r;
-					}
-					else
-					{
-						remove.Add(x.Source);
+						var i = (int)x.Enumerator.Current;
+						bool res = queue.Enqueue(i);
+						if (take && !res)
+						{
+							take = false;
+						}
 					}
 				}
-
-				sources = sources.Except(remove).ToArray();
 
 			} while (take);
 
