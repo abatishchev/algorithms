@@ -73,6 +73,7 @@
     <Compile Include="BuildOrderTest.cs" />
     <Compile Include="CircularQueueTest.cs" />
     <Compile Include="ConnectNodesAtSameLevelTest.cs" />
+    <Compile Include="HeapTest.cs" />
     <Compile Include="HorsepoolTest.cs" />
     <Compile Include="LongestStringTest.cs" />
     <Compile Include="MergeSortedSeqTest.cs" />

@@ -36,15 +36,15 @@ namespace Algorithms.Tests
 				new[] { 1, 2, 2 }
 			};
 
-			var random = new Random();
-			var sources = Enumerable.Range(0, 3)
-									.Select(s => random.Next(0, 50))
-									.Select(r => new { Low = r, High = random.Next(r, random.Next(r + 1, r + 25)) })
-									.Select(x => Enumerable.Range(x.Low, x.High)
-														   .OrderBy(i => i)
-														   .ToArray())
-									.ToArray();
-			yield return new object[] { sources, null };
+			//var random = new Random();
+			//var sources = Enumerable.Range(0, 3)
+			//						.Select(s => random.Next(0, 50))
+			//						.Select(r => new { Low = r, High = random.Next(r, random.Next(r + 1, r + 25)) })
+			//						.Select(x => Enumerable.Range(x.Low, x.High)
+			//											   .OrderBy(i => i)
+			//											   .ToArray())
+			//						.ToArray();
+			//yield return new object[] { sources, null };
 		}
 	}
 }

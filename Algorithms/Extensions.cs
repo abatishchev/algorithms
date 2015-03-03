@@ -4,7 +4,7 @@ namespace Algorithms
 {
 	public static class Extensions
 	{
-		public static void Swap(this IList<int> list, int i, int j)
+		public static void Swap<T>(this IList<T> list, int i, int j)
 		{
 			if (i == j)
 				return;

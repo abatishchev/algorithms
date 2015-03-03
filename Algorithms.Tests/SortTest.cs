@@ -16,7 +16,8 @@ namespace Algorithms.Tests
 
 			sort.Sort(input);
 
-			input.ShouldBeEquivalentTo(input.OrderBy(i => i));
+			input.Should().BeInAscendingOrder()
+				 .And.BeEquivalentTo(input.OrderBy(i => i));
 		}
 
 		public static IEnumerable<object[]> GetData()
@@ -27,6 +28,7 @@ namespace Algorithms.Tests
 			yield return new object[] { typeof(CountSort), gen() };
 			yield return new object[] { typeof(BubbleSort), gen() };
 			yield return new object[] { typeof(Quicksort), gen() };
+			//yield return new object[] { typeof(MergeSort), gen() };
 		}
 	}
 }

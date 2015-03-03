@@ -42,6 +42,7 @@
     <Compile Include="ConnectNodesAtSameLevel.cs" />
     <Compile Include="CountSort.cs" />
     <Compile Include="Extensions.cs" />
+    <Compile Include="Heap.cs" />
     <Compile Include="Horsepool.cs" />
     <Compile Include="IQueue.cs" />
     <Compile Include="IStack.cs" />
@@ -50,6 +51,7 @@
     <Compile Include="FindTreeNode.cs" />
     <Compile Include="FixedSizePriorityQueue.cs" />
     <Compile Include="LongestString.cs" />
+    <Compile Include="MergeSort.cs" />
     <Compile Include="MergeSortedSeq.cs" />
     <Compile Include="MissingNumber.cs" />
     <Compile Include="MultiByteCharString.cs" />
