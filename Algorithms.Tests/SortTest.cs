@@ -28,7 +28,6 @@ namespace Algorithms.Tests
 			yield return new object[] { typeof(CountSort), gen() };
 			yield return new object[] { typeof(BubbleSort), gen() };
 			yield return new object[] { typeof(Quicksort), gen() };
-			//yield return new object[] { typeof(MergeSort), gen() };
 		}
 	}
 }

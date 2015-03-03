@@ -4,7 +4,7 @@ namespace Algorithms
 {
 	public class MergeSortedSeq
 	{
-		public IEnumerable<int> Merge(IList<int> arr1, IList<int> arr2)
+		public static IEnumerable<int> Merge(IList<int> arr1, IList<int> arr2)
 		{
 			bool a = true, b = true;
 			int i = 0, j = 0;

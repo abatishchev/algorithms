@@ -77,6 +77,7 @@
     <Compile Include="HorsepoolTest.cs" />
     <Compile Include="LongestStringTest.cs" />
     <Compile Include="MergeSortedSeqTest.cs" />
+    <Compile Include="MergeSortTest.cs" />
     <Compile Include="MissingNumberTest.cs" />
     <Compile Include="NumberOfDigitsTest.cs" />
     <Compile Include="SortTest.cs" />

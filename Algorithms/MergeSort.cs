@@ -4,59 +4,26 @@ using System.Linq;
 
 namespace Algorithms
 {
-	public class MergeSort : ISort
+	public class MergeSort
 	{
-		public void Sort(IList<int> input)
+		public int[] Sort(int[] input)
 		{
-			Sort(input, 0, input.Count - 1);
-		}
-
-		private static void Sort(IList<int> input, int start, int end)
-		{
-			if (end <= start)
-				return;
-
-			var mid = (start + end) / 2;
-
-			Sort(input, start, mid);
-			Sort(input, mid + 1, end);
-			Merge(input, start, mid, end);
-		}
-
-		private static void Merge(IList<int> input, int start, int mid, int end)
-		{
-			var data = new List<int>(input);
-
-			int index = start;
-
-			while (start <= mid - 1 && mid <= end)
+			if (input.Length <= 1)
 			{
-				if (data[start] <= data[mid])
-				{
-					input[index++] = data[start++];
-				}
-				else
-				{
-					input[index++] = data[mid++];
-				}
+				return input;
 			}
 
-			while (start <= mid - 1)
-			{
-				input[index++] = data[start++];
-			}
+			int mid = input.Length / 2;
+			var left = new int[mid];
+			var right = new int[input.Length - mid];
 
-			while (mid < end)
-			{
-				input[index++] = data[mid++];
-			}
+			Array.Copy(input, left, mid);
+			Array.Copy(input, mid, right, 0, right.Length);
 
-			for (int i = 0; i < end - start + 1; i++)
-			{
+			left = Sort(left);
+			right = Sort(right);
 
-				input[end] = data[end];
-				end--;
-			}
+			return MergeSortedSeq.Merge(left, right).ToArray();
 		}
 	}
 }
