@@ -34,6 +34,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BinarySearch.cs" />
     <Compile Include="BreadthFirstTraversal.cs" />
     <Compile Include="BalancedParenthesis.cs" />
     <Compile Include="BubbleSort.cs" />

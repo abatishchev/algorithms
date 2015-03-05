@@ -70,6 +70,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="BalancedParenthesisTest.cs" />
+    <Compile Include="BinarySearchTest.cs" />
     <Compile Include="BuildOrderTest.cs" />
     <Compile Include="CircularQueueTest.cs" />
     <Compile Include="ConnectNodesAtSameLevelTest.cs" />
