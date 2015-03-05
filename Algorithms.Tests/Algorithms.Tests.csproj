@@ -80,6 +80,7 @@
     <Compile Include="MergeSortTest.cs" />
     <Compile Include="MissingNumberTest.cs" />
     <Compile Include="NumberOfDigitsTest.cs" />
+    <Compile Include="PrimeNumbersTest.cs" />
     <Compile Include="SortTest.cs" />
     <Compile Include="StackTest.cs" />
     <Compile Include="FindLastNodeOnLevelTest.cs" />

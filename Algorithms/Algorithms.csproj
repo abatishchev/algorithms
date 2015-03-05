@@ -58,6 +58,7 @@
     <Compile Include="NthOrderStatistics.cs" />
     <Compile Include="LinkedListQueue.cs" />
     <Compile Include="NumberOfDigits.cs" />
+    <Compile Include="PrimeNumbers.cs" />
     <Compile Include="RadixSort.cs" />
     <Compile Include="ISort.cs" />
     <Compile Include="StringPermutations.cs" />
