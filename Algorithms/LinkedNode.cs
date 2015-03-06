@@ -4,26 +4,57 @@ using System.Diagnostics;
 
 namespace Algorithms
 {
-	[DebuggerDisplay("{Item}")]
+	[DebuggerDisplay("Value={Value}")]
 	public class LinkedNode<T>
 	{
-		public LinkedNode(T item)
+		public LinkedNode(T value)
 		{
-			Item = item;
+			Value = value;
 		}
 
-		public T Item { get; private set; }
+		public T Value { get; private set; }
 
 		public LinkedNode<T> Next { get; set; }
+
+		public override bool Equals(object obj)
+		{
+			return Equals(this, obj as LinkedNode<T>);
+		}
+
+		private static bool Equals(LinkedNode<T> a, LinkedNode<T> b)
+		{
+			return !ReferenceEquals(a, null) && !ReferenceEquals(b, null) && a.Value.Equals(b.Value);
+		}
+
+		public override int GetHashCode()
+		{
+			return Value.GetHashCode();
+		}
+
+		public static bool operator ==(LinkedNode<T> a, LinkedNode<T> b)
+		{
+			if (ReferenceEquals(a, null) && ReferenceEquals(b, null))
+				return true;
+			if (ReferenceEquals(a, null) || ReferenceEquals(b, null))
+				return false;
+
+			return a.Value.Equals(b.Value);
+		}
+
+		public static bool operator !=(LinkedNode<T> a, LinkedNode<T> b)
+		{
+			if (ReferenceEquals(a, null) && ReferenceEquals(b, null))
+				return false;
+			if (ReferenceEquals(a, null) || ReferenceEquals(b, null))
+				return true;
+
+			return !a.Value.Equals(b.Value);
+		}
 	}
 
 	[DebuggerDisplay("{ToString()}")]
 	public class LinkedNode
 	{
-		public LinkedNode()
-		{
-		}
-
 		public LinkedNode(object value)
 		{
 			Value = value.ToString();

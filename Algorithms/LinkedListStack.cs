@@ -20,7 +20,7 @@ namespace Algorithms
 		{
 			var item = _top;
 			_top = _top.Next;
-			return item.Item;
+			return item.Value;
 		}
 	}
 }

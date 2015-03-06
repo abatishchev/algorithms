@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Algorithms
 {
@@ -16,18 +18,18 @@ namespace Algorithms
 
 		public T Dequeue()
 		{
-			if (_output.Count == 0)
+			if (!_output.Any())
 			{
 				while (_input.Count != 0)
 				{
 					_output.Push(_input.Pop());
 				}
 			}
-			if (_output.Count != 0)
+			if (!_output.Any())
 			{
-				return _output.Pop();
+				throw new InvalidOperationException();
 			}
-			return default(T);
+			return _output.Pop();
 		}
 	}
 }

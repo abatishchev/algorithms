@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Algorithms
 {
@@ -9,16 +10,19 @@ namespace Algorithms
 		public void Push(T item)
 		{
 			var temp = new Queue<T>();
-			while (_queue.Count > 0)
-			{
-				temp.Enqueue(_queue.Dequeue());
-			}
+
+			FromQueue(_queue, temp);
 
 			_queue.Enqueue(item);
 
-			while (temp.Count > 0)
+			FromQueue(temp, _queue);
+		}
+
+		private static void FromQueue(Queue<T> source, Queue<T> target)
+		{
+			while (source.Any())
 			{
-				_queue.Enqueue(temp.Dequeue());
+				target.Enqueue(source.Dequeue());
 			}
 		}
 
