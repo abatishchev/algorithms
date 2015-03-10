@@ -47,6 +47,7 @@
     <Compile Include="Horsepool.cs" />
     <Compile Include="IQueue.cs" />
     <Compile Include="IStack.cs" />
+    <Compile Include="IWildcard.cs" />
     <Compile Include="LinkedListStack.cs" />
     <Compile Include="FindCommonNode.cs" />
     <Compile Include="FindTreeNode.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="TreeNode.cs" />
     <Compile Include="Triangle.cs" />
     <Compile Include="Wildcard.cs" />
+    <Compile Include="Wildcard2.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

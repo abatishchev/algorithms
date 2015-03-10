@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Algorithms
 {
-	public class Wildcard
+	public class Wildcard : IWildcard
 	{
 		public int GetNumberOfOccurrences(string input, string pattern)
 		{
@@ -25,10 +25,15 @@ namespace Algorithms
 
 		private static IEnumerable<string> GetMacthes(string[] substrings, string pattern)
 		{
-			return substrings.Where(substring => IsMatch(substring, 0, pattern, 0));
+			return substrings.Where(substring => ExpressionMatches(substring, pattern, 0, 0));
 		}
 
-		private static bool IsMatch(string input, int i, string pattern, int p)
+		public bool ExpressionMatches(string text, string pattern)
+		{
+			return ExpressionMatches(text, pattern, 0, 0);
+		}
+
+		private static bool ExpressionMatches(string input, string pattern, int i, int p)
 		{
 			while (p < pattern.Length)
 			{
@@ -41,14 +46,13 @@ namespace Algorithms
 					//    So just an empty string matches. This is done by recursion.
 					//      Because we eat one character from the match string, the
 					//      recursion will stop.
-					if (IsMatch(input, i, pattern, p + 1))
-						// we have a match and the  replaces no other character
-						return true;
 
 					// 2. Chance we eat the next character and try it again, with a
 					//    wildcard  match. This is done by recursion. Because we eat
 					//      one character from the string, the recursion will stop.
-					if (i < input.Length - 1 && IsMatch(input, i + 1, pattern, p))
+
+					if (ExpressionMatches(input, pattern, i, p + 1) ||
+					    (i < input.Length - 1 && ExpressionMatches(input, pattern, i + 1, p)))
 						return true;
 
 					// Nothing worked with this wildcard.

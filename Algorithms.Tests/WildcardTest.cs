@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading;
 using FluentAssertions;
 using Xunit;
 
@@ -8,11 +10,25 @@ namespace Algorithms.Tests
 	{
 		[Theory]
 		[MemberData("GetData")]
-		public void Wildcard(string pattern, string input, int expected)
+		public void GetNumberOfOccurrences(string pattern, string input, int expected)
 		{
 			int actual = GetNumberOfOccurrences(input, pattern);
 
 			actual.Should().Be(expected);
+		}
+
+		[Theory]
+		[MemberData("GetData")]
+		public void ExpressionMatches(string pattern, string input, int expected)
+		{
+			foreach (var t in new[] { typeof(Wildcard), typeof(Wildcard2) })
+			{
+				var w = (IWildcard)Activator.CreateInstance(t);
+
+				var actual = w.ExpressionMatches(input, pattern);
+
+				actual.Should().Be(expected > 0);
+			}
 		}
 
 		public static IEnumerable<object[]> GetData()
