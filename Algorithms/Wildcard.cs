@@ -1,36 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace Algorithms
 {
 	public class Wildcard
 	{
-		public int GetNumberOfOccurrences(string pattern, string input)
+		public int GetNumberOfOccurrences(string input, string pattern)
 		{
-			var rules = GetRules(pattern).ToArray();
-
 			var substrings = GetSubstrings(input).ToArray();
-
-			var macthes = GetMacthes(substrings, rules).ToArray();
-
+			var macthes = GetMacthes(substrings, pattern).ToArray();
 			return macthes.Count();
-		}
-
-		private static IEnumerable<Rule> GetRules(string pattern)
-		{
-			return pattern.Select(CreateRule);
-		}
-
-		private static Rule CreateRule(char ch, int i)
-		{
-			switch (ch)
-			{
-				case '*':
-					return new WildcardRule(ch, i);
-				default:
-					return new Rule(ch, i);
-			}
 		}
 
 		private static IEnumerable<string> GetSubstrings(string input)
@@ -44,49 +23,50 @@ namespace Algorithms
 			}
 		}
 
-		private static IEnumerable<string> GetMacthes(string[] substrings, Rule[] rules)
+		private static IEnumerable<string> GetMacthes(string[] substrings, string pattern)
 		{
-			return substrings.Where(substring =>
-									{
-										return rules.All(r => r.IsMatch(substring));
-									});
-		}
-	}
-
-	public class WildcardRule : Rule
-	{
-		public WildcardRule(char ch, int i)
-			: base(ch, i)
-		{
+			return substrings.Where(substring => IsMatch(substring, 0, pattern, 0));
 		}
 
-		public override bool IsMatch(string substring)
+		private static bool IsMatch(string input, int i, string pattern, int p)
 		{
-			return true;
-		}
-	}
+			while (p < pattern.Length)
+			{
+				// Single wildcard character
+				if (pattern[p] == '*')
+				{
+					// Need to do some tricks.
 
-	public class Rule
-	{
-		public Rule(char ch, int i)
-		{
-			Character = ch;
-			Position = i;
-		}
+					// 1. The wildcard  is ignored. 
+					//    So just an empty string matches. This is done by recursion.
+					//      Because we eat one character from the match string, the
+					//      recursion will stop.
+					if (IsMatch(input, i, pattern, p + 1))
+						// we have a match and the  replaces no other character
+						return true;
 
-		public char Character { get; private set; }
+					// 2. Chance we eat the next character and try it again, with a
+					//    wildcard  match. This is done by recursion. Because we eat
+					//      one character from the string, the recursion will stop.
+					if (i < input.Length - 1 && IsMatch(input, i + 1, pattern, p))
+						return true;
 
-		public int Position { get; private set; }
+					// Nothing worked with this wildcard.
+					return false;
+				}
+				if (i < input.Length && p < pattern.Length)
+				{
+					// Standard compare of 2 chars. Note that pszSring might be 0
+					// here, but then we never get a match on pszMask that has always
+					// a value while inside this loop.
+					if (input[i++] != pattern[p++])
+						return false;
+				}
+				else return false;
+			}
 
-		public virtual bool IsMatch(string substring)
-		{
-			if (String.IsNullOrEmpty(substring))
-				throw new ArgumentNullException("substring");
-
-			if (substring.Length < Position + 1)
-				return false;
-
-			return substring[Position] == Character;
+			// Have a match? Only if both are at the end...
+			return i == input.Length && p == pattern.Length;
 		}
 	}
 }

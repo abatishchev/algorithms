@@ -10,7 +10,7 @@ namespace Algorithms.Tests
 		[MemberData("GetData")]
 		public void Wildcard(string pattern, string input, int expected)
 		{
-			int actual = GetNumberOfOccurrences(pattern, input);
+			int actual = GetNumberOfOccurrences(input, pattern);
 
 			actual.Should().Be(expected);
 		}
@@ -19,8 +19,14 @@ namespace Algorithms.Tests
 		{
 			yield return new object[] { "a*b", "a0b", 1 };
 			yield return new object[] { "a*b*c", "a0b0c", 1 };
-			//yield return new object[] { "a*a", "a0a0a", 3 };
-			//yield return new object[] { "a*b", "ab", 1 };
+			yield return new object[] { "a*a", "a0a0a", 3 };
+			yield return new object[] { "a*b", "ab", 1 };
+
+			yield return new object[] { "a*c", "a0d", 0 };
+			yield return new object[] { "a*b*c", "a0b0d", 0 };
+
+			yield return new object[] { "*a*b*", "ab", 1 };
+			yield return new object[] { "*a*b*c*", "abc", 1 };
 		}
 	}
 }
