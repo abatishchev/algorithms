@@ -91,6 +91,7 @@
     <Compile Include="QueueTest.cs" />
     <Compile Include="StringPermutationsTest.cs" />
     <Compile Include="TopElementsFromSourcesTest.cs" />
+    <Compile Include="TreeNodeBuilderTest.cs" />
     <Compile Include="TreeToLinkedListTest.cs" />
     <Compile Include="CreateLinkedListTest.cs" />
     <Compile Include="PreOrderTraversalTreeTest.cs" />

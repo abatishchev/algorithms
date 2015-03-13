@@ -54,4 +54,13 @@ namespace Algorithms
 
 		public TreeNode<T> Right { get; set; }
 	}
+
+	public class TreeNodeInfo
+	{
+		public int Child { get; set; }
+
+		public int? Parent { get; set; }
+
+		public bool IsLeft { get; set; }
+	}
 }
