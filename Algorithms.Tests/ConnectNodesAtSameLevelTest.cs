@@ -25,8 +25,8 @@ namespace Algorithms.Tests
 
 			SpeficyNext(root);
 
-			var e = FindTreeNode.Do(root, 'E');
-			var f = FindTreeNode.Do(root, 'F');
+			var e = FindTreeNode.Find(root, 'E');
+			var f = FindTreeNode.Find(root, 'F');
 
 			Assert.Equal(e.Next.Value, f.Value);
 		}

@@ -2,7 +2,7 @@
 {
 	public class FindCommonNode
 	{
-		public static TreeNode Do(TreeNode x, TreeNode y)
+		public static TreeNode Find(TreeNode x, TreeNode y)
 		{
 			TreeNode t;
 			while (true)

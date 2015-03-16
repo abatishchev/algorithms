@@ -2,7 +2,7 @@
 {
 	public class FindTreeNode
 	{
-		public static TreeNode Do(TreeNode tree, char value)
+		public static TreeNode Find(TreeNode tree, char value)
 		{
 			if (tree == null)
 				return null;
@@ -10,11 +10,11 @@
 			if ((char)tree.Value == value)
 				return tree;
 
-			var x = Do(tree.Left, value);
+			var x = Find(tree.Left, value);
 			if (x != null)
 				return x;
 
-			var y = Do(tree.Right, value);
+			var y = Find(tree.Right, value);
 			return y;
 		}
 	}
