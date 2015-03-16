@@ -44,6 +44,7 @@
     <Compile Include="CountSort.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="FindLessOrEqualNode.cs" />
+    <Compile Include="GraphNode.cs" />
     <Compile Include="Heap.cs" />
     <Compile Include="Horsepool.cs" />
     <Compile Include="IQueue.cs" />
@@ -87,6 +88,7 @@
     <Compile Include="ReverseString.cs" />
     <Compile Include="TreeNode.cs" />
     <Compile Include="Triangle.cs" />
+    <Compile Include="TrieBuilder.cs" />
     <Compile Include="Wildcard.cs" />
     <Compile Include="Wildcard2.cs" />
   </ItemGroup>
