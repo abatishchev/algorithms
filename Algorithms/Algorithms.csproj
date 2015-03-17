@@ -50,6 +50,7 @@
     <Compile Include="IQueue.cs" />
     <Compile Include="IStack.cs" />
     <Compile Include="IWildcard.cs" />
+    <Compile Include="LeastRecentlyUsedCache.cs" />
     <Compile Include="LinkedListStack.cs" />
     <Compile Include="FindCommonNode.cs" />
     <Compile Include="FindTreeNode.cs" />
