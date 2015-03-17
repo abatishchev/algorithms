@@ -25,11 +25,15 @@ namespace Algorithms.Tests
 					Right = new TreeNode<double>(2.3)
 				},
 				Right = new TreeNode<double>(3.5)
+				{
+					Left = new TreeNode<double>(3.4)
+				}
 			};
 
 			yield return new object[] { tree, 2.4, 2.3 };
 			yield return new object[] { tree, 2.2, 2.2 };
 			yield return new object[] { tree, 3.6, 3.5 };
+			//yield return new object[] { tree, 3.3, 3 };
 		}
 	}
 }
