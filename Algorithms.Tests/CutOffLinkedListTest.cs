@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using FluentAssertions;
 using Xunit;
@@ -23,7 +22,7 @@ namespace Algorithms.Tests
 		public static IEnumerable<object[]> GetData()
 		{
 			var root = new LinkedNode<int>(0);
-			Enumerable.Range(1, 10).Aggregate(root, (node, i) => node.Next = new LinkedNode<int>(i));
+			Enumerable.Range(root.Value + 1, 10).Aggregate(root, (node, i) => node.Next = new LinkedNode<int>(i));
 			yield return new object[] { root, 3, 3, 3, 7 };
 		}
 	}

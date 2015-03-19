@@ -50,6 +50,30 @@ namespace Algorithms
 
 			return !a.Value.Equals(b.Value);
 		}
+
+		public override string ToString()
+		{
+			return ToString("->");
+		}
+
+		public string ToString(string sep)
+		{
+			return String.Join(sep, GetValues(this));
+		}
+
+		private static IEnumerable<object> GetValues(LinkedNode<T> node)
+		{
+			while (node != null)
+			{
+				yield return node.Value;
+				node = node.Next;
+			}
+		}
+
+		public LinkedNode<T> Clone()
+		{
+			return new LinkedNode<T>(Value) { Next = Next };
+		}
 	}
 
 	[DebuggerDisplay("{ToString()}")]

@@ -72,6 +72,7 @@
     <Compile Include="QueueStack.cs" />
     <Compile Include="Quicksort.cs" />
     <Compile Include="StackQueue.cs" />
+    <Compile Include="SwapLinkedList.cs" />
     <Compile Include="TopElementsFromSources.cs" />
     <Compile Include="TreeNodeBuilder.cs" />
     <Compile Include="TreeToArray.cs" />
