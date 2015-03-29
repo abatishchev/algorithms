@@ -23,7 +23,8 @@ namespace Algorithms
 
 		private static bool Equals(LinkedNode<T> a, LinkedNode<T> b)
 		{
-			return !ReferenceEquals(a, null) && !ReferenceEquals(b, null) && a.Value.Equals(b.Value);
+			return ReferenceEquals(a, null) && ReferenceEquals(b, null) ||
+				   !ReferenceEquals(a, null) && !ReferenceEquals(b, null) && a.Value.Equals(b.Value) && Equals(a.Next, b.Next);
 		}
 
 		public override int GetHashCode()
