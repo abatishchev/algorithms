@@ -8,7 +8,7 @@ namespace Algorithms.Tests
 	{
 		[Theory]
 		[MemberData("GetData")]
-		public void JumpLinkedList(ICollection<int> seq, int c, bool expected)
+		public void JumpLinkedList(IList<int> seq, int c, bool expected)
 		{
 			var actual = Contains(seq, c);
 
@@ -18,6 +18,9 @@ namespace Algorithms.Tests
 		public static IEnumerable<object[]> GetData()
 		{
 			yield return new object[] { new[] { 2, 3 }, 5, true };
+			//yield return new object[] { new[] { 2, 2 }, 4, true };
+
+			yield return new object[] { new[] { 2, 3 }, 6, false };
 			yield return new object[] { new[] { 2, 3 }, 7, false };
 		}
 	}
