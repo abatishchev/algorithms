@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Algorithms
 {
-	public class MergeSort
+	public class MergeSort : ISort
 	{
 		public int[] Sort(int[] input)
 		{
@@ -24,6 +24,11 @@ namespace Algorithms
 			right = Sort(right);
 
 			return MergeSortedSeq.Merge(left, right).ToArray();
+		}
+
+		IList<int> ISort.Sort(IList<int> input)
+		{
+			return Sort((int[])input);
 		}
 	}
 }

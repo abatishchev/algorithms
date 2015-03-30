@@ -4,9 +4,11 @@ namespace Algorithms
 {
 	public class Quicksort : ISort
 	{
-		public void Sort(IList<int> input)
+		public IList<int> Sort(IList<int> input)
 		{
 			Sort(input, 0, input.Count - 1);
+
+			return input;
 		}
 
 		private static void Sort(IList<int> input, int low, int high)

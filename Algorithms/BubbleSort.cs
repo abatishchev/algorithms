@@ -4,7 +4,7 @@ namespace Algorithms
 {
 	public class BubbleSort : ISort
 	{
-		public void Sort(IList<int> input)
+		public IList<int> Sort(IList<int> input)
 		{
 			for (int i = 0; i < input.Count; i++)
 			{
@@ -16,6 +16,7 @@ namespace Algorithms
 					}
 				}
 			}
+			return input;
 		}
 	}
 }

@@ -6,7 +6,8 @@ using Xunit;
 
 namespace Algorithms.Tests
 {
-	public class SortTest
+	public class
+		SortTest
 	{
 		[Theory]
 		[MemberData("GetData")]
@@ -14,10 +15,10 @@ namespace Algorithms.Tests
 		{
 			var sort = (ISort)Activator.CreateInstance(t);
 
-			sort.Sort(input);
+			var actual = sort.Sort(input);
 
-			input.Should().BeInAscendingOrder()
-				 .And.BeEquivalentTo(input.OrderBy(i => i));
+			actual.Should().BeInAscendingOrder()
+			      .And.BeEquivalentTo(input.OrderBy(i => i));
 		}
 
 		public static IEnumerable<object[]> GetData()
@@ -28,6 +29,7 @@ namespace Algorithms.Tests
 			yield return new object[] { typeof(CountSort), gen() };
 			yield return new object[] { typeof(BubbleSort), gen() };
 			yield return new object[] { typeof(Quicksort), gen() };
+			yield return new object[] { typeof(MergeSort), gen() };
 		}
 	}
 }

@@ -6,7 +6,7 @@ namespace Algorithms
 {
 	public class RadixSort : ISort
 	{
-		public void Sort(IList<int> input)
+		public IList<int> Sort(IList<int> input)
 		{
 			int maxLength = GetMaxLength(input);
 
@@ -30,6 +30,8 @@ namespace Algorithms
 					}
 				}
 			}
+
+			return input;
 		}
 
 		private static int GetMaxLength(IList<int> input)

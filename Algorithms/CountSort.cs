@@ -5,7 +5,7 @@ namespace Algorithms
 {
 	public class CountSort : ISort
 	{
-		public void Sort(IList<int> input)
+		public IList<int> Sort(IList<int> input)
 		{
 			int max = input.Max();
 
@@ -27,6 +27,8 @@ namespace Algorithms
 					}
 				}
 			}
+
+			return input;
 		}
 
 		private static int[] InitCounts(int i)

@@ -69,6 +69,7 @@
     <Compile Include="ISort.cs" />
     <Compile Include="SeqContainsSum.cs" />
     <Compile Include="Shuffle.cs" />
+    <Compile Include="SortOddAscEvenDesc.cs" />
     <Compile Include="StringPermutations.cs" />
     <Compile Include="QueueStack.cs" />
     <Compile Include="Quicksort.cs" />

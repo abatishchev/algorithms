@@ -4,6 +4,6 @@ namespace Algorithms
 {
 	public interface ISort
 	{
-		void Sort(IList<int> input);
+		IList<int> Sort(IList<int> input);
 	}
 }
