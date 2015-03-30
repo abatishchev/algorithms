@@ -67,6 +67,7 @@
     <Compile Include="PrimeNumbers.cs" />
     <Compile Include="RadixSort.cs" />
     <Compile Include="ISort.cs" />
+    <Compile Include="SeqContainsSum.cs" />
     <Compile Include="Shuffle.cs" />
     <Compile Include="StringPermutations.cs" />
     <Compile Include="QueueStack.cs" />

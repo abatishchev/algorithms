@@ -85,6 +85,7 @@
     <Compile Include="MissingNumberTest.cs" />
     <Compile Include="NumberOfDigitsTest.cs" />
     <Compile Include="PrimeNumbersTest.cs" />
+    <Compile Include="SeqContainsSumTest.cs" />
     <Compile Include="ShuffleTest.cs" />
     <Compile Include="SortTest.cs" />
     <Compile Include="StackTest.cs" />
