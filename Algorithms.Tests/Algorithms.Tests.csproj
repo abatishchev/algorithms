@@ -88,6 +88,7 @@
     <Compile Include="ShuffleTest.cs" />
     <Compile Include="SortOddAscEvenDescTest.cs" />
     <Compile Include="SortTest.cs" />
+    <Compile Include="SortZeroOneSeqTest.cs" />
     <Compile Include="StackTest.cs" />
     <Compile Include="FindLastNodeOnLevelTest.cs" />
     <Compile Include="FindCommonNodeTest.cs" />
