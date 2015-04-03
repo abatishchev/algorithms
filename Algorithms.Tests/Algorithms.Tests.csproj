@@ -77,6 +77,7 @@
     <Compile Include="FindLessOrEqualNodeTest.cs" />
     <Compile Include="HeapTest.cs" />
     <Compile Include="HorsepoolTest.cs" />
+    <Compile Include="MostFrequentElementTest.cs" />
     <Compile Include="RemoveFromLinkedListTest.cs" />
     <Compile Include="LeastRecentlyUsedCacheTest.cs" />
     <Compile Include="LongestStringTest.cs" />
