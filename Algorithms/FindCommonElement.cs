@@ -26,5 +26,19 @@ namespace Algorithms
 			}
 			return -1;
 		}
+
+		public int Find(int[] a, int[] b, int[] c)
+		{
+			var setA = new HashSet<int>(a);
+			var setB = new HashSet<int>(b);
+
+			foreach (var x in c)
+			{
+				if (setA.Contains(x) && setB.Contains(x))
+					return x;
+			}
+
+			return -1;
+		}
 	}
 }

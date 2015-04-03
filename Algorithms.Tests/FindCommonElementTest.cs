@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using FluentAssertions;
+﻿using FluentAssertions;
 using Xunit;
 
 namespace Algorithms.Tests
@@ -7,28 +6,22 @@ namespace Algorithms.Tests
 	public class FindCommonElementTest : FindCommonElement
 	{
 		[Theory]
-		[MemberData("GetData")]
-		public void FindCommonElement(int[] a, int[] b, int expected)
+		[InlineData(new[] { 1, 2, 3, 4, 5 }, new[] { 6, 7, 8, 3, 9 }, 3)]
+		[InlineData(new[] { 1, 2, 3, 4, 5 }, new[] { 6, 7, 8, 9, 0 }, -1)]
+		public void FindCommonElement2(int[] a, int[] b, int expected)
 		{
 			int actual = Find(a, b);
 
 			actual.Should().Be(expected);
 		}
 
-		public static IEnumerable<object[]> GetData()
+		[Theory]
+		[InlineData(new[] { 1, 2, 3 }, new[] { 3, 4, 5 }, new[] { 3, 0, 0 }, 3)]
+		public void FindCommonElement3(int[] a, int[] b, int[] c, int expected)
 		{
-			yield return new object[]
-			{
-				new[] { 1, 2, 3, 4, 5 },
-				new[] { 6, 7, 8, 3, 9 },
-				3
-			};
-			yield return new object[]
-			{
-				new[] { 1, 2, 3, 4, 5 },
-				new[] { 6, 7, 8, 9, 0 },
-				-1
-			};
+			int actual = Find(a, b, c);
+
+			actual.Should().Be(expected);
 		}
 	}
 }
