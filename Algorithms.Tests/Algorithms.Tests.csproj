@@ -73,6 +73,7 @@
     <Compile Include="BinarySearchTest.cs" />
     <Compile Include="BuildOrderTest.cs" />
     <Compile Include="CircularQueueTest.cs" />
+    <Compile Include="CloneLinkedListTest.cs" />
     <Compile Include="ConnectNodesAtSameLevelTest.cs" />
     <Compile Include="FindLessOrEqualNodeTest.cs" />
     <Compile Include="HeapTest.cs" />

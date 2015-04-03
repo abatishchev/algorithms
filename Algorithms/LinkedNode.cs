@@ -12,9 +12,12 @@ namespace Algorithms
 			Value = value;
 		}
 
-		public T Value { get; private set; }
+		public T Value { get; set; }
 
 		public LinkedNode<T> Next { get; set; }
+
+		public LinkedNode<T> Other { get; set; }
+
 
 		public override bool Equals(object obj)
 		{
@@ -54,26 +57,21 @@ namespace Algorithms
 
 		public override string ToString()
 		{
-			return ToString("->");
+			return String.Join("->", GetValues(this));
 		}
 
-		public string ToString(string sep)
-		{
-			return String.Join(sep, GetValues(this));
-		}
-
-		private static IEnumerable<object> GetValues(LinkedNode<T> node)
+		private static IEnumerable<string> GetValues(LinkedNode<T> node)
 		{
 			while (node != null)
 			{
-				yield return node.Value;
+				yield return node.GetValue();
 				node = node.Next;
 			}
 		}
 
-		public LinkedNode<T> Clone()
+		protected virtual string GetValue()
 		{
-			return new LinkedNode<T>(Value) { Next = Next };
+			return Other == null ? Value.ToString() : String.Format("{0}:{1}", Value, Other.Value);
 		}
 	}
 

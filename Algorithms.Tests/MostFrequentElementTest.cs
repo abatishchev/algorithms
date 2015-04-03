@@ -9,7 +9,7 @@ namespace Algorithms.Tests
 	{
 		[Theory]
 		[MemberData("GetData")]
-		public void SortOddAscEvenDesc(Type t, ICollection<int> input, int expected)
+		public void MostFrequentElement(Type t, ICollection<int> input, int expected)
 		{
 			var x = (IMostFrequentElement)Activator.CreateInstance(t);
 
