@@ -53,6 +53,7 @@
     <Compile Include="IStack.cs" />
     <Compile Include="IWildcard.cs" />
     <Compile Include="MostFrequentElement.cs" />
+    <Compile Include="RemoveDuplicateFromString.cs" />
     <Compile Include="RemoveFromLinkedList.cs" />
     <Compile Include="LeastRecentlyUsedCache.cs" />
     <Compile Include="LinkedListStack.cs" />
