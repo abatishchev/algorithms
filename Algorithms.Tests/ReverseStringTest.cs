@@ -1,22 +1,26 @@
 ﻿using System;
+using FluentAssertions;
 using Xunit;
 
 namespace Algorithms.Tests
 {
-	public class ReverseStringTest : ReverseString
+	public class ReverseStringTest
 	{
 		[Theory]
-		[InlineData("abcdef", "fedcba")]
-		public void ReverseString(string input, string expected)
+		[InlineData(typeof(ReverseString1))]
+		[InlineData(typeof(ReverseString2))]
+		[InlineData(typeof(ReverseString3))]
+		[InlineData(typeof(ReverseString4))]
+		[InlineData(typeof(ReverseString5))]
+		public void ReverseString(Type t)
 		{
-			foreach (var test in new Func<string, string>[]
-				{
-					Do1, Do2, Do3, Do4
-				})
-			{
-				string actual = test(input);
-				Assert.Equal(actual, expected);
-			}
+			const string input = "abcdef", expected = "fedcba";
+
+			var reverse = (IReverseString)Activator.CreateInstance(t);
+
+			string actual = reverse.Reverse(input);
+
+			actual.Should().Be(expected);
 		}
 	}
 }

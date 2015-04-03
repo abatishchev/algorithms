@@ -5,34 +5,46 @@ using System.Text;
 
 namespace Algorithms
 {
-	public class ReverseString
+	public interface IReverseString
 	{
-		public static string Do1(string str)
+		string Reverse(string input);
+	}
+
+	public class ReverseString1 : IReverseString
+	{
+		public string Reverse(string input)
 		{
-			return new string(Reverse(str).ToArray());
+			char[] arr = Reverse(input.ToCharArray()).ToArray();
+			return new string(arr);
 		}
 
-		private static IEnumerable<char> Reverse(string str)
+		private static IEnumerable<char> Reverse(IList<char> input)
 		{
-			for (int i = str.Length - 1; i >= 0; i--)
+			for (int i = input.Count - 1; i >= 0; i--)
 			{
-				yield return str[i];
+				yield return input[i];
 			}
 		}
+	}
 
-		public static string Do2(string str)
+	public class ReverseString2 : IReverseString
+	{
+		public string Reverse(string input)
 		{
-			var sb = new StringBuilder(str.Length);
-			for (int i = str.Length - 1; i >= 0; i--)
+			var sb = new StringBuilder(input.Length);
+			for (int i = input.Length - 1; i >= 0; i--)
 			{
-				sb.Append(str[i]);
+				sb.Append(input[i]);
 			}
 			return sb.ToString();
 		}
+	}
 
-		public static string Do3(string str)
+	public class ReverseString3 : IReverseString
+	{
+		public string Reverse(string input)
 		{
-			return new string(Reverse(str.ToCharArray()));
+			return new string(Reverse(input.ToCharArray()));
 		}
 
 		private static char[] Reverse(char[] arr)
@@ -41,29 +53,27 @@ namespace Algorithms
 			int m = l / 2;
 			for (int i = m; i > 0; i--)
 			{
-				Swap(arr, m - i, m + i - 1);
+				arr.Swap(m - i, m + i - 1);
 			}
 			return arr;
 		}
+	}
 
-		private static void Swap(char[] arr, int i, int j)
+	public class ReverseString4 : IReverseString
+	{
+		public string Reverse(string input)
 		{
-			char t = arr[i];
-			arr[i] = arr[j];
-			arr[j] = t;
-		}
-
-		public static string Do4(string str)
-		{
-			char[] arr = str.ToCharArray();
+			char[] arr = input.ToCharArray();
 			Array.Reverse(arr);
 			return new string(arr);
 		}
+	}
 
-		public static string Do5(string str)
+	public class ReverseString5 : IReverseString
+	{
+		public string Reverse(string input)
 		{
-			char[] arr = str.Reverse()
-							.ToArray();
+			char[] arr = input.Reverse().ToArray();
 			return new string(arr);
 		}
 	}
