@@ -110,7 +110,7 @@
     <Compile Include="LinkedListMeanTest.cs" />
     <Compile Include="LinkListLoopedTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DuplicateInArrayTest.cs" />
+    <Compile Include="FindDuplicateElementTest.cs" />
     <Compile Include="ReverseLinkedListTest.cs" />
     <Compile Include="ReverseStringTest.cs" />
     <Compile Include="TriangleTest.cs" />

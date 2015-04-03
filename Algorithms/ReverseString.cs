@@ -5,12 +5,12 @@ using System.Text;
 
 namespace Algorithms
 {
-	public interface IReverseString
+	public interface IReverse
 	{
 		string Reverse(string input);
 	}
 
-	public class ReverseString1 : IReverseString
+	public class ReverseString1 : IReverse
 	{
 		public string Reverse(string input)
 		{
@@ -27,7 +27,7 @@ namespace Algorithms
 		}
 	}
 
-	public class ReverseString2 : IReverseString
+	public class ReverseString2 : IReverse
 	{
 		public string Reverse(string input)
 		{
@@ -40,7 +40,7 @@ namespace Algorithms
 		}
 	}
 
-	public class ReverseString3 : IReverseString
+	public class ReverseString3 : IReverse
 	{
 		public string Reverse(string input)
 		{
@@ -59,7 +59,7 @@ namespace Algorithms
 		}
 	}
 
-	public class ReverseString4 : IReverseString
+	public class ReverseString4 : IReverse
 	{
 		public string Reverse(string input)
 		{
@@ -69,7 +69,7 @@ namespace Algorithms
 		}
 	}
 
-	public class ReverseString5 : IReverseString
+	public class ReverseString5 : IReverse
 	{
 		public string Reverse(string input)
 		{

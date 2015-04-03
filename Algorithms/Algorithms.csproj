@@ -85,7 +85,7 @@
     <Compile Include="TreeToLinkedList.cs" />
     <Compile Include="CreateLinkedList.cs" />
     <Compile Include="CreateTreeNode.cs" />
-    <Compile Include="DuplicateInArray.cs" />
+    <Compile Include="FindDuplicateElement.cs" />
     <Compile Include="PreOrderTraversalTree.cs" />
     <Compile Include="PostOrderTraversalTree.cs" />
     <Compile Include="InOrderTraversalTree.cs" />

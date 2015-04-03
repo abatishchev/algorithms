@@ -16,7 +16,7 @@ namespace Algorithms.Tests
 		{
 			const string input = "abcdef", expected = "fedcba";
 
-			var reverse = (IReverseString)Activator.CreateInstance(t);
+			var reverse = (IReverse)Activator.CreateInstance(t);
 
 			string actual = reverse.Reverse(input);
 
