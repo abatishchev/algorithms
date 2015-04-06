@@ -1,36 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
+using FluentAssertions;
 using Xunit;
 
 namespace Algorithms.Tests
 {
-	public class LinkListLoopedTest : LinkListLooped
+	public class LinkListLoopedTest
 	{
 		[Theory]
 		[MemberData("GetData")]
-		public void LinkListLooped(LinkedNode root, bool expected)
+		public void LinkListLooped(Type t, LinkedNode root, bool expected)
 		{
-			foreach (var test in new Func<LinkedNode, bool>[]
-				{
-					Do1, Do2
-				})
-			{
-				bool actual = test(root);
-				Assert.Equal(actual, expected);
-			}
+			dynamic x = Activator.CreateInstance(t);
+
+			bool actual = x.IsLooped(root);
+
+			actual.Should().Be(expected);
 		}
 
-		public static IEnumerable<object[]> GetData
+		public static IEnumerable<object[]> GetData()
 		{
-			get
-			{
-				yield return new object[] { CreateLinkedList.Do(), false };
+			yield return new object[] { typeof(LinkListLooped1), CreateLinkedList.Do(), false };
+			yield return new object[] { typeof(LinkListLooped2), CreateLinkedList.Do(), false };
 
-				LinkedNode looped = CreateLinkedList.Do();
-				looped.Next.Next = looped;
+			LinkedNode looped = CreateLinkedList.Do();
+			looped.Next.Next = looped;
 
-				yield return new object[] { looped, true };
-			}
+			yield return new object[] { typeof(LinkListLooped1), looped, true };
+			yield return new object[] { typeof(LinkListLooped2), looped, true };
 		}
 	}
 }

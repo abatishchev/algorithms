@@ -2,9 +2,9 @@
 
 namespace Algorithms
 {
-	public class LinkListLooped
+	public class LinkListLooped1
 	{
-		public static bool Do1(LinkedNode root)
+		public bool IsLooped(LinkedNode root)
 		{
 			var set = new HashSet<LinkedNode>();
 
@@ -20,8 +20,11 @@ namespace Algorithms
 
 			return false;
 		}
+	}
 
-		public static bool Do2(LinkedNode root)
+	public class LinkListLooped2
+	{
+		public bool IsLooped(LinkedNode root)
 		{
 			LinkedNode slow = root, fast = root.Next;
 
