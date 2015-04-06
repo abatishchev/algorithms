@@ -76,6 +76,7 @@
     <Compile Include="CircularQueueTest.cs" />
     <Compile Include="CloneLinkedListTest.cs" />
     <Compile Include="ConnectNodesAtSameLevelTest.cs" />
+    <Compile Include="ContinuousSeqTest.cs" />
     <Compile Include="FindCommonElementTest.cs" />
     <Compile Include="FindLessOrEqualNodeTest.cs" />
     <Compile Include="HeapTest.cs" />

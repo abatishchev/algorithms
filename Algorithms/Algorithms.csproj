@@ -42,6 +42,7 @@
     <Compile Include="CircularQueue.cs" />
     <Compile Include="CloneLinkedList.cs" />
     <Compile Include="ConnectNodesAtSameLevel.cs" />
+    <Compile Include="ContinuousSeq.cs" />
     <Compile Include="CountSort.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="FindCommonElement.cs" />
