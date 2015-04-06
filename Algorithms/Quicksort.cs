@@ -13,20 +13,21 @@ namespace Algorithms
 
 		private static void Sort(IList<int> input, int low, int high)
 		{
-			var index = Partition(input, low, high);
+			if (low >= high)
+				return;
 
-			if (low < index - 1)
-				Sort(input, low, index - 1);
+			var pivot = Partition(input, low, high);
 
-			if (index < high)
-				Sort(input, index, high);
+			Sort(input, low, pivot - 1);
+
+			Sort(input, pivot + 1, high);
 		}
 
 		private static int Partition(IList<int> input, int low, int high)
 		{
 			var pivot = input[(low + high) / 2];
 
-			while (low <= high)
+			while (true)
 			{
 				while (input[low] < pivot)
 					low++;
@@ -34,15 +35,12 @@ namespace Algorithms
 				while (input[high] > pivot)
 					high--;
 
-				if (low <= high)
+				if (low < high)
 				{
 					input.Swap(low, high);
-					low++;
-					high--;
 				}
+				else return high;
 			}
-
-			return low;
 		}
 	}
 }

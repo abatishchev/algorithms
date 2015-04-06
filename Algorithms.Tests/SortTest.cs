@@ -18,18 +18,20 @@ namespace Algorithms.Tests
 			var actual = sort.Sort(input);
 
 			actual.Should().BeInAscendingOrder()
-			      .And.BeEquivalentTo(input.OrderBy(i => i));
+				  .And.BeEquivalentTo(input.OrderBy(i => i));
 		}
+
+		private static readonly Random _randon = new Random();
 
 		public static IEnumerable<object[]> GetData()
 		{
-			Func<int[]> gen = () => new[] { 102, 23, 1, 301, 4, 89 };
+			var seq = Enumerable.Range(0, 25).OrderBy(i => _randon.Next());
 
-			yield return new object[] { typeof(RadixSort), gen() };
-			yield return new object[] { typeof(CountSort), gen() };
-			yield return new object[] { typeof(BubbleSort), gen() };
-			yield return new object[] { typeof(Quicksort), gen() };
-			yield return new object[] { typeof(MergeSort), gen() };
+			yield return new object[] { typeof(RadixSort), seq.ToArray() };
+			yield return new object[] { typeof(CountSort), seq.ToArray() };
+			yield return new object[] { typeof(BubbleSort), seq.ToArray() };
+			yield return new object[] { typeof(Quicksort), seq.ToArray() };
+			yield return new object[] { typeof(MergeSort), seq.ToArray() };
 		}
 	}
 }
