@@ -2,7 +2,7 @@
 
 namespace Algorithms
 {
-	public class Wildcard2 : IWildcard
+	public class Wildcard2
 	{
 		public bool ExpressionMatches(string text, string pattern)
 		{

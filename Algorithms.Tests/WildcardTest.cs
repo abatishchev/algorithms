@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading;
 using FluentAssertions;
 using Xunit;
 
@@ -23,9 +22,9 @@ namespace Algorithms.Tests
 		{
 			foreach (var t in new[] { typeof(Wildcard), typeof(Wildcard2) })
 			{
-				var w = (IWildcard)Activator.CreateInstance(t);
+				dynamic x = Activator.CreateInstance(t);
 
-				var actual = w.ExpressionMatches(input, pattern);
+				bool actual = x.ExpressionMatches(input, pattern);
 
 				actual.Should().Be(expected > 0);
 			}

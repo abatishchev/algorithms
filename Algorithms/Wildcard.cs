@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Algorithms
 {
-	public class Wildcard : IWildcard
+	public class Wildcard
 	{
 		public int GetNumberOfOccurrences(string input, string pattern)
 		{
