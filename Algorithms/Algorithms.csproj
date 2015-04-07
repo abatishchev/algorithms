@@ -52,7 +52,6 @@
     <Compile Include="Horsepool.cs" />
     <Compile Include="IQueue.cs" />
     <Compile Include="IStack.cs" />
-    <Compile Include="IWildcard.cs" />
     <Compile Include="MostFrequentElement.cs" />
     <Compile Include="RemoveDuplicateFromString.cs" />
     <Compile Include="RemoveFromLinkedList.cs" />
@@ -80,6 +79,7 @@
     <Compile Include="QueueStack.cs" />
     <Compile Include="Quicksort.cs" />
     <Compile Include="StackQueue.cs" />
+    <Compile Include="SumChildNodes.cs" />
     <Compile Include="SwapLinkedList.cs" />
     <Compile Include="TopElementsFromSources.cs" />
     <Compile Include="TreeNodeBuilder.cs" />

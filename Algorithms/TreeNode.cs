@@ -53,6 +53,22 @@ namespace Algorithms
 		public TreeNode<T> Left { get; set; }
 
 		public TreeNode<T> Right { get; set; }
+
+		public override bool Equals(object obj)
+		{
+			var other = obj as TreeNode<T>;
+			if (other == null)
+				return false;
+
+			return Value.Equals(other.Value) &&
+				   (Left == null || Left.Equals(other.Left)) &&
+				   (Right == null || Right.Equals(other.Right));
+		}
+
+		public override int GetHashCode()
+		{
+			return Value.GetHashCode();
+		}
 	}
 
 	public class TreeNodeInfo
