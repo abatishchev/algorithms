@@ -1,13 +1,11 @@
-﻿using System;
-using Xunit;
+﻿using Xunit;
 
 namespace Algorithms.Tests
 {
-	public class ConnectNodesAtSameLevelTest : ConnectNodesAtSameLevel
+    public class ConnectNodesAtSameLevelTest : ConnectNodesAtSameLevel
 	{
-		[Theory]
-		[InlineData("ABCDEF")]
-		public void ConnectTreeNodesAtSameLevel(string data)
+		[Fact]
+		public void ConnectTreeNodesAtSameLevel()
 		{
 			TreeNode root = new TreeNode('A')
 			{

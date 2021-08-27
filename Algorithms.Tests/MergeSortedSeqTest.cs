@@ -8,7 +8,7 @@ namespace Algorithms.Tests
 	public class MergeSortedSeqTest : MergeSortedSeq
 	{
 		[Theory]
-		[MemberData("GetData2")]
+		[MemberData(nameof(GetData2))]
 		public void MergeSortedSeq2(IList<int> a, IList<int> b, IList<int> expected)
 		{
 			var actual = Merge(a, b).ToArray();
@@ -17,7 +17,7 @@ namespace Algorithms.Tests
 		}
 
 		[Theory]
-		[MemberData("GetData3")]
+        [MemberData(nameof(GetData3))]
 		public void MergeSortedSeq3(IList<int> a, IList<int> b, IList<int> c, IList<int> expected)
 		{
 			var actual = Merge(a, b, c).ToArray();

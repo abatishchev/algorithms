@@ -1,6 +1,4 @@
-﻿using System.Runtime.Hosting;
-
-namespace Algorithms
+﻿namespace Algorithms
 {
 	public enum TriangleType : byte
 	{
