@@ -7,7 +7,7 @@ namespace Algorithms.Tests
 	public class FindLessOrEqualNodeTest : FindLessOrEqualNode
 	{
 		[Theory]
-		[MemberData("GetData")]
+		[MemberData(nameof(GetData))]
 		public void FindLessOrEqualNode(TreeNode<double> root, double value, double expected)
 		{
 			var actual = FindLessOrEqual(root, value);

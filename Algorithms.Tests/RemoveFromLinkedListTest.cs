@@ -9,7 +9,7 @@ namespace Algorithms.Tests
 	public class RemoveFromLinkedListTest : RemoveFromLinkedList
 	{
 		[Theory]
-		[MemberData("GetData")]
+		[MemberData(nameof(GetData))]
 		public void JumpLinkedList(LinkedNode<int> root, int n, LinkedNode<int> expected)
 		{
 			var actual = Remove(root, n);

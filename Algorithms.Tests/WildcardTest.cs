@@ -8,8 +8,8 @@ namespace Algorithms.Tests
 	public class WildcardTest : Wildcard
 	{
 		[Theory]
-		[MemberData("GetData")]
-		public void GetNumberOfOccurrences(string pattern, string input, int expected)
+		[MemberData(nameof(GetData))]
+		public void GetNumberOfOccurrencesTest(string pattern, string input, int expected)
 		{
 			int actual = GetNumberOfOccurrences(input, pattern);
 
@@ -17,8 +17,8 @@ namespace Algorithms.Tests
 		}
 
 		[Theory]
-		[MemberData("GetData")]
-		public void ExpressionMatches(string pattern, string input, int expected)
+		[MemberData(nameof(GetData))]
+		public void ExpressionMatchesTest(string pattern, string input, int expected)
 		{
 			foreach (var t in new[] { typeof(Wildcard), typeof(Wildcard2) })
 			{

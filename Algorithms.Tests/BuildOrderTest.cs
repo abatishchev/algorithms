@@ -8,12 +8,12 @@ namespace Algorithms.Tests
 	public class BuildOrderTest : BuildOrder
 	{
 		[Theory]
-		[MemberData("GetData")]
+		[MemberData(nameof(GetData))]
 		public void BuildOrder(ICollection<Operation> ops, ICollection<OperationDependency> deps, IEnumerable<IEnumerable<Operation>> expected)
 		{
 			var actual = FindBuildOrder(ops, deps).ToArray();
 
-			actual.ShouldBeEquivalentTo(expected);
+			actual.Should().BeEquivalentTo(expected);
 		}
 
 		public static IEnumerable<object[]> GetData()

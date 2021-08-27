@@ -8,7 +8,7 @@ namespace Algorithms.Tests
 	public class SumChildNodesTest
 	{
 		[Theory]
-		[MemberData("GetData")]
+		[MemberData(nameof(GetData))]
 		public void LinkListLooped(Type t, TreeNode<int> root, TreeNode<int> expected)
 		{
 			dynamic x = Activator.CreateInstance(t);

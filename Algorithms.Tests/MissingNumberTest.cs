@@ -7,7 +7,7 @@ namespace Algorithms.Tests
 	public class MissingNumberTest : MissingNumber
 	{
 		[Theory]
-		[MemberData("GetData")]
+		[MemberData(nameof(GetData))]
 		public void MissingNumber1(ICollection<int> numbers, int expected)
 		{
 			int actual = FindMissingNumber1(numbers);
@@ -16,7 +16,7 @@ namespace Algorithms.Tests
 		}
 
 		[Theory]
-		[MemberData("GetData")]
+		[MemberData(nameof(GetData))]
 		public void MissingNumbe2(IList<int> numbers, int expected)
 		{
 			int actual = FindMissingNumber2(numbers);
@@ -25,7 +25,7 @@ namespace Algorithms.Tests
 		}
 
 		[Theory]
-		[MemberData("GetData")]
+		[MemberData(nameof(GetData))]
 		public void MissingNumbe3(ICollection<int> numbers, int expected)
 		{
 			int actual = FindMissingNumber3(numbers);

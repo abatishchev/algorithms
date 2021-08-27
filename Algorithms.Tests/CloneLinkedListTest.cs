@@ -7,7 +7,7 @@ namespace Algorithms.Tests
 	public class CloneLinkedListTest : CloneLinkedList
 	{
 		[Theory]
-		[MemberData("GetData")]
+		[MemberData(nameof(GetData))]
 		public void CloneLinkedList(LinkedNode<int> root, string expected)
 		{
 			var actual = Clone(root);

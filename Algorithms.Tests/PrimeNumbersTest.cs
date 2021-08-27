@@ -7,12 +7,12 @@ namespace Algorithms.Tests
 	public class PrimeNumbersTest : PrimeNumbers
 	{
 		[Theory]
-		[MemberData("GetData")]
+		[MemberData(nameof(GetData))]
 		public void PrimeNumbers(int max, ICollection<int> expected)
 		{
 			var actual = GetPrimeNumbers(17);
 
-			actual.ShouldBeEquivalentTo(expected);
+			actual.Should().BeEquivalentTo(expected);
 		}
 
 		public static IEnumerable<object[]> GetData()

@@ -9,7 +9,7 @@ namespace Algorithms.Tests
 	public class TopElementsFromSourcesTest : TopElementsFromSources
 	{
 		[Theory]
-		[MemberData("GetData")]
+		[MemberData(nameof(GetData))]
 		public void TopElementsFromSources(int[][] sources, int[] expected)
 		{
 			const int top = 3;
@@ -20,7 +20,7 @@ namespace Algorithms.Tests
 			{
 				expected = sources.SelectMany(i => i).OrderBy(i => i).Take(top).ToArray();
 			}
-			actual.ShouldBeEquivalentTo(expected);
+			actual.Should().BeEquivalentTo(expected);
 		}
 
 		public static IEnumerable<object[]> GetData()

@@ -7,7 +7,7 @@ namespace Algorithms.Tests
 	public class SeqContainsSumTest : SeqContainsSum
 	{
 		[Theory]
-		[MemberData("GetData")]
+		[MemberData(nameof(GetData))]
 		public void JumpLinkedList(IList<int> seq, int c, bool expected)
 		{
 			var actual = Contains(seq, c);

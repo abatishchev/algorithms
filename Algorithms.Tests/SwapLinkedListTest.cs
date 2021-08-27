@@ -8,7 +8,7 @@ namespace Algorithms.Tests
 	public class SwapLinkedListTest : SwapLinkedList
 	{
 		[Theory]
-		[MemberData("GetData")]
+		[MemberData(nameof(GetData))]
 		public void SwapEvenNodes(LinkedNode<int> root)
 		{
 			root = SwapEven(root);

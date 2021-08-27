@@ -13,7 +13,7 @@ namespace Algorithms.Tests
 		{
 			var actual = Merge(a, b).ToArray();
 
-			actual.ShouldBeEquivalentTo(expected);
+			actual.Should().BeEquivalentTo(expected);
 		}
 
 		[Theory]
@@ -22,7 +22,7 @@ namespace Algorithms.Tests
 		{
 			var actual = Merge(a, b, c).ToArray();
 
-			actual.ShouldBeEquivalentTo(expected);
+			actual.Should().BeEquivalentTo(expected);
 		}
 
 		public static IEnumerable<object[]> GetData2()

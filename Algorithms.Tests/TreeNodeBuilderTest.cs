@@ -7,7 +7,7 @@ namespace Algorithms.Tests
 	public class TreeNodeBuilderTest : TreeNodeBuilder
 	{
 		[Theory]
-		[MemberData("GetData")]
+		[MemberData(nameof(GetData))]
 		public void TreeNodeBuilder(TreeNodeInfo[] arr)
 		{
 			var actual = DeserializeTree(arr);

@@ -7,7 +7,7 @@ namespace Algorithms.Tests
 	public class SortOddAscEvenDescTest : SortOddAscEvenDesc
 	{
 		[Theory]
-		[MemberData("GetData")]
+		[MemberData(nameof(GetData))]
 		public void SortOddAscEvenDesc(IList<int> input, ICollection<int> expected)
 		{
 			var actual = Sort(input);

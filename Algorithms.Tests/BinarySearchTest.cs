@@ -9,7 +9,7 @@ namespace Algorithms.Tests
 	public class BinarySearchTest : BinarySearch
 	{
 		[Theory]
-		[MemberData("GetData")]
+		[MemberData(nameof(GetData))]
 		public void BinarySearch(IList<int> input, int key, int expected)
 		{
 			var actual = Find(input, key);

@@ -7,7 +7,7 @@ namespace Algorithms.Tests
 	public class ContinuousSeqTest : ContinuousSeq
 	{
 		[Theory]
-		[MemberData("GetData")]
+		[MemberData(nameof(GetData))]
 		public void ContinuousSeq(IEnumerable<int[]> seq, int[] expected)
 		{
 			int[] actual = GetContinuousSeq(seq);

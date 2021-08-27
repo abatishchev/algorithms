@@ -6,7 +6,7 @@ namespace Algorithms.Tests
     public class NthOrderStatisticsTest : NthOrderStatistics
     {
         [Theory]
-        [MemberData("GetData")]
+        [MemberData(nameof(GetData))]
         public void Do(int[] arr, int expected)
         {
             int actual = Median(arr);

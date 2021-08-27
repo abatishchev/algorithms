@@ -7,12 +7,12 @@ namespace Algorithms.Tests
 	public class LongestStringTest : LongestString
 	{
 		[Theory]
-		[MemberData("GetData")]
+		[MemberData(nameof(GetData))]
 		public void LongestString(int n, IList<string> input, IList<string> expected)
 		{
 			var actual = GetLongestString(n, input);
 
-			actual.ShouldBeEquivalentTo(expected);
+			actual.Should().BeEquivalentTo(expected);
 		}
 
 		public static IEnumerable<object[]> GetData()

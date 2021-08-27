@@ -8,7 +8,7 @@ namespace Algorithms.Tests
 	public class SortZeroOneSeqTest
 	{
 		[Theory]
-		[MemberData("GetData")]
+		[MemberData(nameof(GetData))]
 		public void SortOddAscEvenDesc(Type t, IList<int> input, ICollection<int> expected)
 		{
 			var sort = (ISort)Activator.CreateInstance(t);

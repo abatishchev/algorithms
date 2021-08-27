@@ -10,7 +10,7 @@ namespace Algorithms.Tests
 		SortTest
 	{
 		[Theory]
-		[MemberData("GetData")]
+		[MemberData(nameof(GetData))]
 		public void Sort(Type t, IList<int> input)
 		{
 			var sort = (ISort)Activator.CreateInstance(t);

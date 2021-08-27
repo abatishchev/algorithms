@@ -7,7 +7,7 @@ namespace Algorithms.Tests
 	public class HorsepoolTest : Horsepool
 	{
 		[Theory]
-		[MemberData("GetData")]
+		[MemberData(nameof(GetData))]
 		public void Horsepool(string input, string searchTerm, int expected)
 		{
 			int actual = IndexOf(input, searchTerm);

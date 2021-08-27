@@ -5,10 +5,10 @@ namespace Algorithms
 {
 	public class Wildcard
 	{
-		public int GetNumberOfOccurrences(string input, string pattern)
+        public int GetNumberOfOccurrences(string input, string pattern)
 		{
 			var substrings = GetSubstrings(input).ToArray();
-			var macthes = GetMacthes(substrings, pattern).ToArray();
+			var macthes = GetMatches(substrings, pattern).ToArray();
 			return macthes.Count();
 		}
 
@@ -23,7 +23,7 @@ namespace Algorithms
 			}
 		}
 
-		private static IEnumerable<string> GetMacthes(string[] substrings, string pattern)
+		private static IEnumerable<string> GetMatches(string[] substrings, string pattern)
 		{
 			return substrings.Where(substring => ExpressionMatches(substring, pattern, 0, 0));
 		}
@@ -42,7 +42,7 @@ namespace Algorithms
 				{
 					// Need to do some tricks.
 
-					// 1. The wildcard  is ignored. 
+					// 1. The wildcard  is ignored.
 					//    So just an empty string matches. This is done by recursion.
 					//      Because we eat one character from the match string, the
 					//      recursion will stop.

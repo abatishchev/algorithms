@@ -9,15 +9,15 @@ namespace Algorithms.Tests
 	public class ShuffleTest
 	{
 		[Theory]
-		[MemberData("GetData")]
+		[MemberData(nameof(GetData))]
 		public void Shuffle(Type t, IList<int> values)
 		{
 			var sh = (IShuffle)Activator.CreateInstance(t);
 
 			values = sh.Do(values);
 
-			values.Should().NotBeAscendingInOrder()
-			      .And.Subject.Should().NotBeDescendingInOrder();
+			values.Should().NotBeInAscendingOrder()
+			      .And.Subject.Should().NotBeInDescendingOrder();
 		}
 
 		public static IEnumerable<object[]> GetData()

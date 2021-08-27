@@ -8,7 +8,7 @@ namespace Algorithms.Tests
 	public class MostFrequentElementTest
 	{
 		[Theory]
-		[MemberData("GetData")]
+		[MemberData(nameof(GetData))]
 		public void MostFrequentElement(Type t, ICollection<int> input, int expected)
 		{
 			var x = (IMostFrequentElement)Activator.CreateInstance(t);

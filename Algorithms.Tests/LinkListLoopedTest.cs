@@ -8,7 +8,7 @@ namespace Algorithms.Tests
 	public class LinkListLoopedTest
 	{
 		[Theory]
-		[MemberData("GetData")]
+		[MemberData(nameof(GetData))]
 		public void LinkListLooped(Type t, LinkedNode root, bool expected)
 		{
 			dynamic x = Activator.CreateInstance(t);

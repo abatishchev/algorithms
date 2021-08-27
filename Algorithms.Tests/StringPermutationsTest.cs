@@ -8,14 +8,14 @@ namespace Algorithms.Tests
 	public class StringPermutationsTest
 	{
 		[Theory]
-		[MemberData("GetData")]
+		[MemberData(nameof(GetData))]
 		public void StringPermutations(Type t, string input, string[] expected)
 		{
 			dynamic x = Activator.CreateInstance(t);
 
 			string[] actual = x.GetPermutations(input);
 
-			actual.ShouldBeEquivalentTo(expected);
+			actual.Should().BeEquivalentTo(expected);
 		}
 
 		public static IEnumerable<object[]> GetData()
